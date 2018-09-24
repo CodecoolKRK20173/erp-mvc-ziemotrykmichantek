@@ -20,5 +20,12 @@ def generate_random(table):
     generated = ''
 
     # your code
-
+    letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    generated+= random.choice(letters)
+    genereated+='H'
+    for i in range(2):
+        generated+= str(random.randint(1,9))
+    generated+= 'J'
+    generated+= random.choice(letters)
+    generated+= '#&'
     return generated

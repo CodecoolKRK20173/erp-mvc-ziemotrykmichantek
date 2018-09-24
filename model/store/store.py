@@ -10,7 +10,6 @@ Data table structure:
 """
 
 # everything you'll need is imported:
-from model import data_manager
 from model import common
 
 
@@ -26,8 +25,7 @@ def add(table, record):
         list: Table with a new record
     """
     # your code
-
-    return table
+    return common.common_add(table, record)
 
 
 def remove(table, id_):
@@ -43,8 +41,7 @@ def remove(table, id_):
     """
 
     # your code
-
-    return table
+    return common.common_remove(table, id_)
 
 
 def update(table, id_, record):
@@ -61,8 +58,7 @@ def update(table, id_, record):
     """
 
     # your code
-
-    return table
+    return common.common_update(table, id_, record)
 
 
 # special functions:
@@ -80,7 +76,6 @@ def get_counts_by_manufacturers(table):
     """
 
     # your code
-
 
 def get_average_by_manufacturer(table, manufacturer):
     """

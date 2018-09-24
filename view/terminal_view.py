@@ -62,6 +62,13 @@ def print_menu(title, list_options, exit_message):
     """
 
     # your code
+    print(title)
+    id = 1
+    for option in list_options:
+        print('     (' + str(id) + ') ' + option)
+        id+=1
+    print('    (0) ' + exit_message)
+
 
 
 def get_inputs(list_labels, title):
@@ -86,6 +93,9 @@ def get_inputs(list_labels, title):
     inputs = []
 
     # your code
+    print(title)
+    for question in list_labels:
+        inputs.append(input(question))
 
     return inputs
 
@@ -106,3 +116,12 @@ def print_error_message(message):
     """
 
     # your code
+    print('Error: ', message)
+
+def get_record():
+    inputs = get_inputs(['Title: ', 'Manufacturer: ', 'Prize: ', 'In Stock: '], 'New record:')
+    return inputs
+
+def get_id():
+    id = input('Enter ID: ')
+    return id
