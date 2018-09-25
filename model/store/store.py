@@ -24,7 +24,7 @@ def add(table, record):
         list: Table with a new record
     """
     # your code
-    return common.common_add(table, record)
+    return common.common_add(table, record, )
 
 
 def remove(table, id_):

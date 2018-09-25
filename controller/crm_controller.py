@@ -14,7 +14,20 @@ def run():
     """
 
     # your code
-    common.common_controller(crm.add(get_table_from_file('customers.csv', terminal_view.get_record() )),
-    crm.run(get_table_from_file('customers.csv')),
-    crm.update(get_table_from_file('customers.csv', terminal_view.get_id() )),
-    crm.remove(get_table_from_file('customers.csv', terminal_view.get_id() )) )
+    options = ['Create',
+               'Read',
+               'Update',
+               'Delete']
+
+    terminal_view.print_menu(options,"Back to main menu")
+    choice = None
+    while choice != "0":
+        choice = terminal_view.get_choice(options)
+        if choice == "1":
+            crm.add(data_manager.get_table_from_file('mode/crm/customers.csv', terminal_view.get_record() ))
+        elif choice == "2":
+            crm.update(data_manager.get_table_from_file('mode/crm/customers.csv', terminal_view.get_id() ))
+        elif choice == "3":
+            crm.remove(data_manager.get_table_from_file('mode/crm/customers.csv', terminal_view.get_id() ))
+        else:
+            terminal_view.print_error_message("There is no such choice.")
