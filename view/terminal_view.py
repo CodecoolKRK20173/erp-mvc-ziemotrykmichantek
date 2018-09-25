@@ -1,7 +1,7 @@
 """ Terminal view module """
 
 
-def print_table(table, title_list):
+def print_table(table):
     """
     Prints table with data.
 
@@ -23,17 +23,13 @@ def print_table(table, title_list):
     """
 
     # your goes code
-    if len(table[0])=5
-
-w
-
-    print('+' + '=' * 30 + '+' + '=' * 30 + '+' + '=' * 10 + '+' + '=' * 30 + '+' + '=' * 10 + '+')
-    print('|{:^30}'.format(table[0][0]) + ('|{:^30}'.format(table[]))+ ('|{:^30}'.format("YEAR")) + ('|{:^30}'.format("GENRE")) + ('|{:^10}|'.format("TIME")) )
-    print('+' + '=' * 30 + '+' + '=' * 30 + '+' + '=' * 10 + '+' + '=' * 30 + '+' + '=' * 10 + '+')
-
-# def display_album_to_print(album_print):
-#     print('|{:^30}|{:^30}|{:^10}|{:^30}|{:^10}|'.format(album_print[0], album_print[1], album_print[2], album_print[3], album_print[4]))
-#     print('+' + '=' * 30 + '+' + '=' * 30 + '+' + '=' * 10 + '+' + '=' * 30 + '+' + '=' * 10 + '+')
+    maxwidth=0
+    for i, d in enumerate(table):
+        line = '|'.join(str(x).ljust(maxwidth+2) for x in d)
+        if i ==0:
+            print('_' * len(line[:-maxwidth+3]))
+        print(line[:-maxwidth+2]+'|')
+        print('_' * len(line[:-maxwidth+3]))
 
 
 def print_result(result, label):

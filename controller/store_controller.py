@@ -27,8 +27,10 @@ def run():
         if choice == "1":
             data_manager.write_table_to_file('model/store/games.csv',store.add(data_manager.get_table_from_file('model/store/games.csv'), terminal_view.get_record() ))
         elif choice == "2":
-            store.update(data_manager.get_table_from_file('model/store/games.csv'), terminal_view.get_id() )
+            terminal_view.print_table(data_manager.get_table_from_file('model/store/games.csv'))
         elif choice == "3":
+            store.update(data_manager.get_table_from_file('model/store/games.csv'), terminal_view.get_id() )
+        elif choice == "4":
             store.remove(data_manager.get_table_from_file('model/store/games.csv'), terminal_view.get_id() )
         else:
             terminal_view.print_error_message("There is no such choice.")
