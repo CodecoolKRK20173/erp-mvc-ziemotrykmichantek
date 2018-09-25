@@ -36,6 +36,7 @@ def generate_random(table):
     return generated
 
 def common_add(table, record):
+    print('GÓWNO COMMON')
     record.insert(0, generate_random(table) )
     table.append(record)
     return table
@@ -47,6 +48,7 @@ def common_remove(table, id_):
     return table
 
 def common_update(table, id_, record):
+    print('du[pa]')
     for i in range(len(table)):
         if table[i][0] == id_:
             table[i] = record

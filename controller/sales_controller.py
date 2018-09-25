@@ -2,6 +2,7 @@
 from view import terminal_view
 from model.sales import sales
 from controller import common
+from model import data_manager
 
 def run():
     """
@@ -14,7 +15,7 @@ def run():
     """
 
     # your code
-    common.common_controller(sales.add(get_table_from_file('sales.csv', terminal_view.get_record() )),
-    sales.run(get_table_from_file('sales.csv')),
-    sales.update(get_table_from_file('sales.csv', terminal_view.get_id() )),
-    sales.remove(get_table_from_file('sales.csv', terminal_view.get_id() )) )
+    common.common_controller(sales.add,
+    sales.run,
+    sales.update,
+    sales.remove, (data_manager.get_table_from_file('model/sales/sales.csv', terminal_view.get_id() )) )

@@ -24,6 +24,7 @@ def add(table, record):
         list: Table with a new record
     """
     # your code
+    print('GÓWNO')
     return common.common_add(table, record)
 
 
