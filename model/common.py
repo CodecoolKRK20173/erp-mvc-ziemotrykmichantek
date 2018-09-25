@@ -17,22 +17,27 @@ def generate_random(table):
         string: Random and unique string
     """
 
-    generated = ''
 
     # your code
-    letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    generated+= random.choice(letters)
-    genereated+='H'
-    for i in range(2):
-        generated+= str(random.randint(1,9))
-    generated+= 'J'
-    generated+= random.choice(letters)
-    generated+= '#&'
+    list_of_existing_keys = [record[0] for record in table]
+
+    while True:
+        generated = ''
+        letters = 'abcdefghijklmnopqrstuvwxyz'
+        generated+= random.choice(letters)
+        genereated+='H'
+        for i in range(2):
+            generated+= str(random.randint(1,9))
+        generated+= 'J'
+        generated+= random.choice(letters)
+        generated+= '#&'
+        if generated not in list_of_existing_keys:
+            break
     return generated
 
 def common_add(table, record):
+    record.insert(0, generate_random(table) )
     table.append(record)
-    table.insert(0, generate_random() )
     return table
 
 def common_remove(table, id_):
