@@ -14,3 +14,7 @@ def run():
     """
 
     # your code
+    common.common_controller(hr.add(get_table_from_file('persons.csv', terminal_view.get_record() )),
+    hr.run(get_table_from_file('persons.csv')),
+    hr.update(get_table_from_file('persons.csv', terminal_view.get_id() )),
+    hr.remove(get_table_from_file('persons.csv', terminal_view.get_id() )) )

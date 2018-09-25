@@ -15,22 +15,7 @@ def run():
         None
     """
     # your code
-    options = ['Create',
-               'Read',
-               'Update',
-               'Delete']
-
-    terminal_view.print_menu(options,"Back to main menu")
-    choice = None
-    while choice != "0":
-        choice = terminal_view.get_choice(options)
-        if choice == "1":
-            store.add(get_table_from_file('games.csv', terminal_view.get_record() ))
-        elif choice == "2":
-            store.run(get_table_from_file('games.csv'))
-        elif choice == "3":
-            store.update(get_table_from_file('games.csv', terminal_view.get_id() ))
-        elif choice == "4":
-            store.remove(get_table_from_file('games.csv', terminal_view.get_id() ))
-        else:
-            terminal_view.print_error_message("There is no such choice.")
+    common.common_controller(store.add(get_table_from_file('games.csv', terminal_view.get_record() )),
+    store.run(get_table_from_file('games.csv')),
+    store.update(get_table_from_file('games.csv', terminal_view.get_id() )),
+    store.remove(get_table_from_file('games.csv', terminal_view.get_id() )) )

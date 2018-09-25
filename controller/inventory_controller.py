@@ -14,3 +14,7 @@ def run():
     """
 
     # your code
+    common.common_controller(inventory.add(get_table_from_file('inventory.csv', terminal_view.get_record() )),
+    inventory.run(get_table_from_file('inventory.csv')),
+    inventory.update(get_table_from_file('inventory.csv', terminal_view.get_id() )),
+    inventory.remove(get_table_from_file('inventory.csv', terminal_view.get_id() )) )

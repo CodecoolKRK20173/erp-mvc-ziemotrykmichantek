@@ -44,7 +44,7 @@ def remove(table, id_):
     """
 
     # your code
-    return common_remove(table, id_)
+    return common.common_remove(table, id_)
 
 
 def update(table, id_, record):

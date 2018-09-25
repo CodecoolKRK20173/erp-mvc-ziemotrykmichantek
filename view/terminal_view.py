@@ -70,7 +70,6 @@ def print_menu(title, list_options, exit_message):
     print('    (0) ' + exit_message)
 
 
-
 def get_inputs(list_labels, title):
     """
     Gets list of inputs from the user.

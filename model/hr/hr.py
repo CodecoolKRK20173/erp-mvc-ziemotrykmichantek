@@ -8,7 +8,6 @@ Data table structure:
 """
 
 # everything you'll need is imported:
-from model import data_manager
 from model import common
 
 
@@ -41,7 +40,7 @@ def remove(table, id_):
     """
 
     # your code
-    return common_remove(table, id_)
+    return common.common_remove(table, id_)
 
 
 def update(table, id_, record):
