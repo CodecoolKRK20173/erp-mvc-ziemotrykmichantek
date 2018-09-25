@@ -23,6 +23,17 @@ def print_table(table, title_list):
     """
 
     # your goes code
+    if len(table[0])=5
+
+w
+
+    print('+' + '=' * 30 + '+' + '=' * 30 + '+' + '=' * 10 + '+' + '=' * 30 + '+' + '=' * 10 + '+')
+    print('|{:^30}'.format(table[0][0]) + ('|{:^30}'.format(table[]))+ ('|{:^30}'.format("YEAR")) + ('|{:^30}'.format("GENRE")) + ('|{:^10}|'.format("TIME")) )
+    print('+' + '=' * 30 + '+' + '=' * 30 + '+' + '=' * 10 + '+' + '=' * 30 + '+' + '=' * 10 + '+')
+
+# def display_album_to_print(album_print):
+#     print('|{:^30}|{:^30}|{:^10}|{:^30}|{:^10}|'.format(album_print[0], album_print[1], album_print[2], album_print[3], album_print[4]))
+#     print('+' + '=' * 30 + '+' + '=' * 30 + '+' + '=' * 10 + '+' + '=' * 30 + '+' + '=' * 10 + '+')
 
 
 def print_result(result, label):
@@ -98,8 +109,8 @@ def get_inputs(list_labels, title):
 
     return inputs
 
-def get_choice(options):
-    print_menu("Main menu",options, "Exit program")
+def get_choice():
+
     inputs = get_inputs(["Please enter a number: "], "")
     return inputs[0]
 

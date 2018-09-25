@@ -25,7 +25,7 @@ def generate_random(table):
         generated = ''
         letters = 'abcdefghijklmnopqrstuvwxyz'
         generated+= random.choice(letters)
-        genereated+='H'
+        generated+='H'
         for i in range(2):
             generated+= str(random.randint(1,9))
         generated+= 'J'
