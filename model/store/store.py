@@ -76,6 +76,13 @@ def get_counts_by_manufacturers(table):
     """
 
     # your code
+    dict = {}
+    for record in table:
+        if record[2] in dict:
+            dict[record[2]]+= 1
+        else:
+            dict[record[2]]= 1
+    return dict
 
 def get_average_by_manufacturer(table, manufacturer):
     """
@@ -90,3 +97,8 @@ def get_average_by_manufacturer(table, manufacturer):
     """
 
     # your code
+    in_stock_list = []
+    for record in table:
+        if record[2] == manufacturer:
+            in_stock_list.append(int(record[4]))
+    return sum(in_stock_list)/len(in_stock_list)

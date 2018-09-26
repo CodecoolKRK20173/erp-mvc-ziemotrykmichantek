@@ -23,23 +23,10 @@ def print_table(table, title_list):
     """
 
     # your goes code
-    """
-    maxwidth=0
-    for i in range(len(table)):
-        for j in range(len(table[0])):
-            if len(str(table[i][j])) > maxwidth:
-                maxwidth = len(str(table[i][j]))
-    for i, d in enumerate(table):
-        line = '|'.join(str(x).center(maxwidth+2) for x in d)
-        if i ==0:
-            print('_' * len(line))
-        line += '|'
-        print(line)
-        print('_' * len(line))
-        """
+
     titles_char_number = [0] * len(table[0])
     
-    table_with_titles = table.insert(0, title_list)
+    table.insert(0, title_list)
 
     for line in table:
         len_of_longest_string = 0
