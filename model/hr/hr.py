@@ -86,6 +86,7 @@ def get_oldest_person(table):
             if oldest_person[1]!=record[1]:
                 oldest_persons.apped(record[1])
 
+
     return oldest_persons
 
 
@@ -102,3 +103,22 @@ def get_persons_closest_to_average(table):
     """
 
     # your code
+    closest_to_avarage_list = []
+    avarage = [int(record[2]) for record in table]
+    avarage = sum(avarage)/len(avarage)
+
+    for i, record in enumerate(table):
+        range_from_avarage = abs(avarage - float(range[2]))
+        if i == 0:
+            minimum_distance_from_avarage = abs(float(record[2])-avarage)
+            closest_to_avarage_record = record
+        elif minimum_distance_from_avarage > abs(float(record[2])-avarage):
+            minimum_distance_from_avarage = abs(float)
+            closest_to_avarage_record = record
+    closest_to_avarage_list.append(closest_to_avarage_record[1])
+    for i, record in enumerate(table):
+        range_from_avarage = abs(avarage - float(range[2]))
+        if record[1] not in closest_to_avarage_list:
+            if minimum_distance_from_avarage == abs(float(record[2])-avarage):
+                closest_to_avarage_list.append(record[1])
+    return closest_to_avarage_list

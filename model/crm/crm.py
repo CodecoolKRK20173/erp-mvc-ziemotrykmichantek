@@ -101,3 +101,8 @@ def get_subscribed_emails(table):
         """
 
     # your code
+    list_of_emails_and_names = []
+    for i, record in enumerate(table):
+        if int(record[3]) == 1:
+            list_of_emails_and_names.append(record[1]+';'+record[2])
+    return list_of_emails_and_names

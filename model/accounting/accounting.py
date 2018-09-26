@@ -79,7 +79,21 @@ def which_year_max(table):
     """
 
     # your code
-
+    years_and_profit_dict = {}
+    for i, record in enumerate(table):
+        year = record[3]
+        profit_or_not_profit_absolute_value = int(record[5])
+        if years_and_profit_dict[year] not in years_and_profit_dict:
+            if record[4] == 'in':
+                years_and_profit_dict = int(profit_or_not_profit_absolute_value)
+            else:
+                years_and_profit_dict = -int(profit_or_not_profit_absolute_value)
+        else:
+            if record[4] == 'in':
+                years_and_profit_dict += int(profit_or_not_profit_absolute_value)
+            else:
+                years_and_profit_dict -= int(profit_or_not_profit_absolute_value)
+    return int(max(years_and_profit_dict, key = years_and_profit_dict.get))
 
 def avg_amount(table, year):
     """
@@ -94,3 +108,14 @@ def avg_amount(table, year):
     """
 
     # your code
+    profit = 0
+    for i, record in enumerate(table):
+        current_year = int(record[3])
+        if current_year == year:
+            if record[4] == 'in':
+                profit += int(record[5])
+            else:
+                profit -= int(record[5])
+        if i == len(table)-1:
+            number_of_transactions = i
+    return profit/number_of_transactions
