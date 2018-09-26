@@ -21,6 +21,7 @@ def run():
                'Delete']
 
     title_list = ["id", "title", "price", "month", "day", "year"]
+    table = data_manager.get_table_from_file('model/sales/sales.csv')
 
     terminal_view.print_menu("Choose option:",options,"Back to main menu")
     choice = None
@@ -31,7 +32,7 @@ def run():
             sales.add(data_manager.get_table_from_file('model/sales/sales.csv', terminal_view.get_record() ))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
-            terminal_view.print_table(data_manager.get_table_from_file('model/sales/sales.csv'))
+            terminal_view.print_table(table, title_list)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "3":
             sales.update(data_manager.get_table_from_file('model/sales/sales.csv', terminal_view.get_id() ))

@@ -25,6 +25,7 @@ def print_table(table, title_list):
     # your goes code
 
     titles_char_number = [0] * len(table[0])
+    title_list = [x.upper() for x in title_list]
     
     table.insert(0, title_list)
 
@@ -34,9 +35,22 @@ def print_table(table, title_list):
             if titles_char_number[i] < len(line[i]):
                 titles_char_number[i] = len(line[i])
 
-    for line in table:
-        for i in range(len(line)):
-            print("|{:^{y}}|".format(line[i], y=titles_char_number[i] + 4), end="")
+    for i in range(len(table[0])):
+        print("+" + "=" * (titles_char_number[i]+4) + "+", end="")
+    print("")
+    for i in range(len(table[1])):
+        print("|{:^{y}}|".format(table[0][i], y=titles_char_number[i] + 4), end="")
+    print("")
+    for i in range(len(table[0])):
+        print("+" + "=" * (titles_char_number[i]+4) + "+", end="")
+    print("")
+
+    for j in range(1, len(table)):
+        for i in range(len(table[j])):
+            print("|{:^{y}}|".format(table[j][i], y=titles_char_number[i] + 4), end="")
+        print("")
+        for i in range(len(table[j])):
+            print("+" + "-" * (titles_char_number[i]+4) + "+", end="")
         print("")
 
 def print_result(result, label):
