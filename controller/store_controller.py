@@ -33,6 +33,7 @@ def run():
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
             terminal_view.print_table(table, title_list)
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "3":
             store.update(data_manager.get_table_from_file('model/store/games.csv'), terminal_view.get_id() )
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
