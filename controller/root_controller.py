@@ -19,8 +19,10 @@ def run():
 
     choice = None
     while choice != "0":
+        common.clear_function()
         terminal_view.print_menu("Main menu: ", options, "Exit program")
         choice = terminal_view.get_choice()
+        common.clear_function()
         if choice == "1":
             store_controller.run()
         elif choice == "2":
