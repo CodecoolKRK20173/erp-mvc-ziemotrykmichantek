@@ -53,3 +53,12 @@ def common_update(table, id_, record):
         if table[i][0] == id_:
             table[i] = record
     return table
+
+def return_the_last_item_by_alphabetical_order_of_the_title(list):
+    updated_list = list
+    for j in enumerate(list):
+        for i, record in enumerate(list):
+            if i != len(list)-1:
+                if updated_list[i][1].lower() > updated_list[i+1][1].lower():
+                    updated_list[i][1], updated_list[i+1][1] = updated_list[i+1][1], updated_list[i][1]
+    return updated_list[0][0]
