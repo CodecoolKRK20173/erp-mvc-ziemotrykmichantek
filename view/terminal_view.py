@@ -1,7 +1,7 @@
 """ Terminal view module """
 
 
-def print_table(table):
+def print_table(table, title_list):
     """
     Prints table with data.
 
@@ -23,6 +23,7 @@ def print_table(table):
     """
 
     # your goes code
+    """
     maxwidth=0
     for i in range(len(table)):
         for j in range(len(table[0])):
@@ -35,7 +36,21 @@ def print_table(table):
         line += '|'
         print(line)
         print('_' * len(line))
+        """
+    titles_char_number = [0] * len(table[0])
+    
+    table_with_titles = table.insert(0, title_list)
 
+    for line in table:
+        len_of_longest_string = 0
+        for i in range(len(line)):
+            if titles_char_number[i] < len(line[i]):
+                titles_char_number[i] = len(line[i])
+
+    for line in table:
+        for i in range(len(line)):
+            print("|{:^{y}}|".format(line[i], y=titles_char_number[i] + 4), end="")
+        print("")
 
 def print_result(result, label):
     """

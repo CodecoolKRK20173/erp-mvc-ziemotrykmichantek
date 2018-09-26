@@ -20,6 +20,8 @@ def run():
                'Update',
                'Delete']
 
+    title_list = ["id", "month", "day", "year", "type", "amount"]
+
     terminal_view.print_menu("Choose option:",options,"Back to main menu")
     choice = None
     while choice != "0":
