@@ -24,12 +24,17 @@ def print_table(table):
 
     # your goes code
     maxwidth=0
+    for i in range(len(table)):
+        for j in range(len(table[0])):
+            if len(str(table[i][j])) > maxwidth:
+                maxwidth = len(str(table[i][j]))
     for i, d in enumerate(table):
-        line = '|'.join(str(x).ljust(maxwidth+2) for x in d)
+        line = '|'.join(str(x).center(maxwidth+2) for x in d)
         if i ==0:
-            print('_' * len(line[:-maxwidth+3]))
-        print(line[:-maxwidth+2]+'|')
-        print('_' * len(line[:-maxwidth+3]))
+            print('_' * len(line))
+        line += '|'
+        print(line)
+        print('_' * len(line))
 
 
 def print_result(result, label):
