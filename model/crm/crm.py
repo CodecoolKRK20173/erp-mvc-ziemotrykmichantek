@@ -59,7 +59,6 @@ def update(table, id_, record):
     # your code
     return common.common_update(table, id_, record)
 
-
 # special functions:
 # ------------------
 
@@ -76,7 +75,17 @@ def get_longest_name_id(table):
         """
 
     # your code
-
+    for i, record in enumerate(table):
+        if i==0:
+            longest_name = record
+            longest_name_id = record[0]
+        if len(longest_name[1]) > len(record[1]):
+            longest_name = record
+            longest_name_id = record[0]
+    for i, record in enumerate(table):
+        if record==longest_name:
+            longest_name_id = common.return_the_last_item_by_alphabetical_order_of_the_title(table)
+    return longest_name_id
 
 # the question: Which customers has subscribed to the newsletter?
 # return type: list of strings (where string is like email+separator+name, separator=";")

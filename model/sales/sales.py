@@ -86,9 +86,9 @@ def get_lowest_price_item_id(table):
         if int(record[2]) < lowest_prize:
             lowest_prize = int(record[2])
             lowest_prize_id = record[0]
-    """for i, record in enumerate(table):
+    for i, record in enumerate(table):
         if int(record[2]) == lowest_prize:
-            lowest_prize_id = common.return_the_last_item_by_alphabetical_order_of_the_title(table)"""
+            lowest_prize_id = common.return_the_last_item_by_alphabetical_order_of_the_title(table)
     return lowest_prize_id
 
 

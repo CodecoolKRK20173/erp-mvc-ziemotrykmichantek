@@ -1,6 +1,5 @@
 """ Terminal view module """
 
-
 def print_table(table, title_list):
     """
     Prints table with data.
@@ -23,10 +22,9 @@ def print_table(table, title_list):
     """
 
     # your goes code
-
     titles_char_number = [0] * len(table[0])
     title_list = [x.upper() for x in title_list]
-    
+
     table.insert(0, title_list)
 
     for line in table:
