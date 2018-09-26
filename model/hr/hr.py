@@ -75,6 +75,19 @@ def get_oldest_person(table):
     """
 
     # your code
+    for i, record in enumerate(table):
+        if i==0:
+            oldest_person = record
+        if int(oldest_person[2]) > int(record[2]):
+            oldest_person = record
+    oldest_persons = [oldest_person[1]]
+    for i, record in enumerate(table):
+        if int(record[2])==int(oldest_person[2]):
+            if oldest_person[1]!=record[1]:
+                oldest_persons.apped(record[1])
+
+    return oldest_persons
+
 
 
 def get_persons_closest_to_average(table):

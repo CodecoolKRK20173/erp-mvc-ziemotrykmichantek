@@ -77,7 +77,11 @@ def get_available_items(table):
     """
 
     # your code
-
+    for i in table:
+        list_of_not_exceeded_items = []
+        if int(table[3])+int(table[4]) >= 2016: # repository creation date
+            list_of_not_exceeded_items.append(table)
+        return list_of_not_exceeded_items
 
 def get_average_durability_by_manufacturers(table):
     """
