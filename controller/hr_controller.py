@@ -18,7 +18,9 @@ def run():
     options = ['Create',
                'Read',
                'Update',
-               'Delete']
+               'Delete',
+               'Show oldest person',
+               'Show closest person to avarage age in data']
 
     title_list = ["id", "name", "birth_year"]
     table = data_manager.get_table_from_file('model/hr/persons.csv')

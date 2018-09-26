@@ -18,7 +18,9 @@ def run():
     options = ['Create',
                'Read',
                'Update',
-               'Delete']
+               'Delete',
+               'Show lowest prize item id',
+               'Show items sold between given dates']
 
     title_list = ["id", "title", "price", "month", "day", "year"]
     table = data_manager.get_table_from_file('model/sales/sales.csv')

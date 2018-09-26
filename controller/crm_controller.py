@@ -18,7 +18,9 @@ def run():
     options = ['Create',
                'Read',
                'Update',
-               'Delete']
+               'Delete',
+               'Show the id of the customer with the longest name',
+               'Show which customer has subcribed to the newsletter']
 
     title_list = ["id", "name", "email", "subscribed"]
     table = data_manager.get_table_from_file('model/crm/customers.csv')
