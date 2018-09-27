@@ -42,6 +42,12 @@ def run():
         elif choice == "4":
             store.remove(data_manager.get_table_from_file('model/store/games.csv'), terminal_view.get_id() )
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
+        elif choice == "5":
+            store.get_counts_by_manufacturers(data_manager.get_table_from_file('model/store/games.csv'))
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
+        elif choice == "6":
+            store.get_average_by_manufacturer(table, manufacturer)
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")        
         else:
             terminal_view.print_error_message("There is no such choice.")
             terminal_view.print_menu("Choose option:",options,"Back to main menu")

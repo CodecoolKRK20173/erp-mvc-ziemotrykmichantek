@@ -42,6 +42,13 @@ def run():
         elif choice == "4":
             sales.remove(data_manager.get_table_from_file('model/sales/sales.csv', terminal_view.get_id() ))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
+        elif choice == "5":
+            sales.get_lowest_price_item_id(data_manager.get_table_from_file('model/sales/sales.csv'))
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
+        elif choice == "6":
+            sales.get_items_sold_between(data_manager.get_table_from_file('model/sales/sales.csv'))
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
+            #get_items_sold_between(table, month_from, day_from, year_from, month_to, day_to, year_to)
         else:
             terminal_view.print_error_message("There is no such choice.")
             terminal_view.print_menu("Choose option:",options,"Back to main menu")

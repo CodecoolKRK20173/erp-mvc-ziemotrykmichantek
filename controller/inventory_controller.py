@@ -42,6 +42,12 @@ def run():
         elif choice == "4":
             inventory.remove(data_manager.get_table_from_file('model/inventory/inventory.csv', terminal_view.get_id() ))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
+        elif choice == "5":
+            inventory.get_available_items(data_manager.get_table_from_file('model/inventory/inventory.csv'))
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
+        elif choice == "6":
+            inventory.get_average_durability_by_manufacturers(data_manager.get_table_from_file('model/inventory/inventory.csv'))
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_error_message("There is no such choice.")
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
