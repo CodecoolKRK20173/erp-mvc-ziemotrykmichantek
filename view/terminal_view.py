@@ -158,3 +158,12 @@ def get_from_to_date():
     for question in needed_inputs:
         input_list.append(input(question))
     return [input_list[1], input_list[2], input_list[0], input_list[4], input_list[5], input_list[3]]
+
+
+def print_primitive_logo():
+    print("""
+     __ __  __
+     |_ |__)|__)   _  _. _ .|_.     _  _ _ __  _ | _ |_  _
+     |__| \ |     |_)| ||||||_|\/  |_)| (-    (_|||_)| )(_|
+                  |                |              |         
+    """)
