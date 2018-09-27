@@ -22,6 +22,7 @@ def print_table(table, title_list):
     """
 
     # your goes code
+    titles_char_number = []
     titles_char_number = [0] * len(table[0])
     title_list = [x.upper() for x in title_list]
 
@@ -167,7 +168,7 @@ def get_year():
         return year
     except ValueError:
         print("Wrong input! Use numbers.")
-    
+
 def get_manufacturer():
     manuf = input("What manufacturer are you interested in? ")
     return manuf
@@ -177,5 +178,5 @@ def print_primitive_logo():
      __ __  __
      |_ |__)|__)   _  _. _ .|_.     _  _ _ __  _ | _ |_  _
      |__| \ |     |_)| ||||||_|\/  |_)| (-    (_|||_)| )(_|
-                  |                |              |         
+                  |                |              |
     """)

@@ -38,8 +38,8 @@ def run():
             terminal_view.print_primitive_logo()
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
-            terminal_view.print_table(table, title_list)
             terminal_view.print_primitive_logo()
+            terminal_view.print_table(table, title_list)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "3":
             terminal_view.print_primitive_logo()
