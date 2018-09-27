@@ -31,16 +31,16 @@ def run():
         choice = terminal_view.get_choice()
         common.clear_function()
         if choice == "1":
-            hr.add(data_manager.get_table_from_file('model/hr/persons.csv', terminal_view.get_record() ))
+            hr.add(table, terminal_view.get_record() ))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
             terminal_view.print_table(table, title_list)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "3":
-            hr.update(data_manager.get_table_from_file('model/hr/persons.csv', terminal_view.get_id() ))
+            hr.update(table, terminal_view.get_id() ))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "4":
-            hr.remove(data_manager.get_table_from_file('model/hr/persons.csv', terminal_view.get_id() ))
+            hr.remove(table, terminal_view.get_id() ))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
             hr.get_oldest_person(table)

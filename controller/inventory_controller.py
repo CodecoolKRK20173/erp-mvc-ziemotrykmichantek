@@ -31,22 +31,22 @@ def run():
         choice = terminal_view.get_choice()
         common.clear_function()
         if choice == "1":
-            inventory.add(data_manager.get_table_from_file('model/inventory/inventory.csv', terminal_view.get_record() ))
+            inventory.add(table, terminal_view.get_record() ))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
             terminal_view.print_table(table, title_list)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "3":
-            inventory.update(data_manager.get_table_from_file('model/inventory/inventory.csv', terminal_view.get_id() ))
+            inventory.update(table, terminal_view.get_id() ))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "4":
-            inventory.remove(data_manager.get_table_from_file('model/inventory/inventory.csv', terminal_view.get_id() ))
+            inventory.remove(table, terminal_view.get_id() ))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
-            inventory.get_available_items(data_manager.get_table_from_file('model/inventory/inventory.csv'))
+            inventory.get_available_items(table))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
-            inventory.get_average_durability_by_manufacturers(data_manager.get_table_from_file('model/inventory/inventory.csv'))
+            inventory.get_average_durability_by_manufacturers(table))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_error_message("There is no such choice.")
