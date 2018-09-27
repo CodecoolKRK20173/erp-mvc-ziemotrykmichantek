@@ -31,6 +31,7 @@ def run():
     choice = None
     while choice != "0":
         choice = terminal_view.get_choice()
+        table = data_manager.get_table_from_file(file_name)
         common.clear_function()
         if choice == "1":
             data_manager.write_table_to_file(file_name ,sales.add(table, terminal_view.get_record() ))

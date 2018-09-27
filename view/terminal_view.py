@@ -52,7 +52,7 @@ def print_table(table, title_list):
             print("+" + "-" * (titles_char_number[i]+4) + "+", end="")
         print("")
 
-def print_result(result, label):
+def print_result(result):
     """
     Displays results of the special functions.
 
@@ -66,7 +66,6 @@ def print_result(result, label):
 
     # your code
     print(result)
-    print(label)
 
 
 def print_menu(title, list_options, exit_message):
