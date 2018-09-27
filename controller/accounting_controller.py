@@ -42,6 +42,12 @@ def run():
         elif choice == "4":
             accounting.remove(data_manager.get_table_from_file('model/accounting/items.csv', terminal_view.get_id() ))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
+        elif choice == "5":
+            accounting.which_year_max(table)
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
+        elif choice == "6":
+            accounting.avg_amount(table, year) # input needed
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_error_message("There is no such choice.")
             terminal_view.print_menu("Choose option:",options,"Back to main menu")

@@ -84,7 +84,7 @@ def get_oldest_person(table):
     for i, record in enumerate(table):
         if int(record[2])==int(oldest_person[2]):
             if oldest_person[1]!=record[1]:
-                oldest_persons.apped(record[1])
+                oldest_persons.append(record[1])
 
 
     return oldest_persons
@@ -104,8 +104,8 @@ def get_persons_closest_to_average(table):
 
     # your code
     closest_to_avarage_list = []
-    avarage = [int(record[2]) for record in table]
-    avarage = sum(avarage)/len(avarage)
+    avarage_alpha = [float(record[2]) for record in table]
+    avarage = sum(avarage_alpha)/len(avarage_alpha)
 
     for i, record in enumerate(table):
         range_from_avarage = abs(avarage - float(range[2]))

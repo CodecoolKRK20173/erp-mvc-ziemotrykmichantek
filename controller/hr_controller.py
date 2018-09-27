@@ -42,6 +42,12 @@ def run():
         elif choice == "4":
             hr.remove(data_manager.get_table_from_file('model/hr/persons.csv', terminal_view.get_id() ))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
+        elif choice == "5":
+            hr.get_oldest_person(table)
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
+        elif choice == "6":
+            hr.get_persons_closest_to_average(table)
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_error_message("There is no such choice.")
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
