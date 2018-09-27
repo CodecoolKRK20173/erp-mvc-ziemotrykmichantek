@@ -95,3 +95,19 @@ def get_average_durability_by_manufacturers(table):
     """
 
     # your code
+    dict_durability_sum = {}
+    dict_how_many = {}
+    for i, record in enumerate(table):
+        manufacturer = record[2]
+        durability = int(record[4])
+        if manufacturer not in dict_durability_sum and manufacturer not in dict_how_many:
+            dict_durability_sum[manufacturer] = durability
+            dict_how_many[manufacturer] = 1
+        else:
+            dict_durability_sum[manufacturer] += durability
+            dict_how_many[manufacturer] += 1
+
+    dict_avarage_durability = {}
+    for key in dict_durability_sum:
+        dict_avarage_durability[key] = dict_durability_sum[key]/dict_how_many[key]
+    return dict_avarage_durability
