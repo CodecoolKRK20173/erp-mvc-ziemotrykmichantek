@@ -31,16 +31,16 @@ def run():
         choice = terminal_view.get_choice()
         common.clear_function()
         if choice == "1":
-            accounting.add(table, terminal_view.get_record() ))
+            accounting.add(table, terminal_view.get_record() )
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
             terminal_view.print_table(table, title_list)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "3":
-            accounting.update(table, terminal_view.get_id() ))
+            accounting.update(table, terminal_view.get_id() )
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "4":
-            accounting.remove(table, terminal_view.get_id() ))
+            accounting.remove(table, terminal_view.get_id() )
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
             accounting.which_year_max(table)

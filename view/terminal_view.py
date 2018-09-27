@@ -150,3 +150,11 @@ def get_record():
 def get_id():
     id = input('Enter ID: ')
     return id
+
+def get_from_to_date():
+    print('Enter date')
+    needed_inputs = ('From which year: ', 'From which month: ', 'From which day: ', 'To which year: ', 'To which month: ', 'To which day:')
+    input_list = []
+    for question in needed_inputs:
+        input_list.append(input(question))
+    return [input_list[1], input_list[2], input_list[0], input_list[4], input_list[5], input_list[3]]

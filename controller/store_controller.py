@@ -31,7 +31,7 @@ def run():
         choice = terminal_view.get_choice()
         common.clear_function()
         if choice == "1":
-            store.add(table, terminal_view.get_record() ))
+            store.add(table, terminal_view.get_record() )
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
             terminal_view.print_table(table, title_list)
@@ -47,7 +47,7 @@ def run():
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
             store.get_average_by_manufacturer(table, manufacturer)
-            terminal_view.print_menu("Choose option:",options,"Back to main menu")        
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_error_message("There is no such choice.")
             terminal_view.print_menu("Choose option:",options,"Back to main menu")

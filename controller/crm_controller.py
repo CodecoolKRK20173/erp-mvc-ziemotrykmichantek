@@ -31,16 +31,16 @@ def run():
         choice = terminal_view.get_choice()
         common.clear_function()
         if choice == "1":
-            crm.add(table, terminal_view.get_record() ))
+            crm.add(table, terminal_view.get_record() )
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
             terminal_view.print_table(table, title_list)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "3":
-            crm.update(table, terminal_view.get_id() ))
+            crm.update(table, terminal_view.get_id() )
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "4":
-            crm.remove(table, terminal_view.get_id() ))
+            crm.remove(table, terminal_view.get_id() )
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
             crm.get_longest_name_id(table)
