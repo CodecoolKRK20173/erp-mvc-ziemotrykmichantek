@@ -57,7 +57,7 @@ def run():
             sales.get_items_sold_between(table)
             terminal_view.print_primitive_logo()
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
-            inputs = get_from_to_date()
+            inputs = terminal_view.get_from_to_date()
             month_from, day_from, year_from, month_to, day_to, year_to = inputs[0], inputs[1], inputs[2], inputs[3], inputs[4], inputs[5]
             get_items_sold_between(table, month_from, day_from, year_from, month_to, day_to, year_to)
         else:

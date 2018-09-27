@@ -54,8 +54,9 @@ def run():
             terminal_view.print_primitive_logo()
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
+            year = terminal_view.get_year()
             accounting.avg_amount(table, year)
-            terminal_view.print_primitive_logo() # input needed
+            terminal_view.print_primitive_logo() 
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_primitive_logo()

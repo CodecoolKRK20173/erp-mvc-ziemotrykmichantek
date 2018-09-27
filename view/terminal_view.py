@@ -159,6 +159,16 @@ def get_from_to_date():
         input_list.append(input(question))
     return [input_list[1], input_list[2], input_list[0], input_list[4], input_list[5], input_list[3]]
 
+def get_year():
+    try:
+        year = int(input("What year are you interested in? "))
+        return year
+    except ValueError:
+        print("Wrong input! Use numbers.")
+    
+def get_manufacturer():
+    manuf = input("What manufacturer are you interested in? ")
+    return manuf
 
 def print_primitive_logo():
     print("""
