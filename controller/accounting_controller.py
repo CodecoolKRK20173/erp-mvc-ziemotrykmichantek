@@ -25,6 +25,7 @@ def run():
     title_list = ["id", "month", "day", "year", "type", "amount"]
     table = data_manager.get_table_from_file('model/accounting/items.csv')
 
+    terminal_view.print_primitive_logo()
     terminal_view.print_menu("Choose option:",options,"Back to main menu")
     choice = None
     while choice != "0":
@@ -32,22 +33,31 @@ def run():
         common.clear_function()
         if choice == "1":
             accounting.add(table, terminal_view.get_record() )
+            terminal_view.print_primitive_logo()
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
+            terminal_view.print_primitive_logo()
             terminal_view.print_table(table, title_list)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "3":
+            terminal_view.print_primitive_logo()
+            terminal_view.print_table(table, title_list)
             accounting.update(table, terminal_view.get_id() )
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "4":
+            terminal_view.print_primitive_logo()
+            terminal_view.print_table(table, title_list)
             accounting.remove(table, terminal_view.get_id() )
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
             accounting.which_year_max(table)
+            terminal_view.print_primitive_logo()
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
-            accounting.avg_amount(table, year) # input needed
+            accounting.avg_amount(table, year)
+            terminal_view.print_primitive_logo() # input needed
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
+            terminal_view.print_primitive_logo()
             terminal_view.print_error_message("There is no such choice.")
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
