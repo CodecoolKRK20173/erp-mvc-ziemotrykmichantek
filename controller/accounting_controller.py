@@ -56,12 +56,12 @@ def run():
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
             terminal_view.print_primitive_logo()
-            accounting.which_year_max(table)
+            terminal_view.print_result(accounting.which_year_max(table))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
             year = terminal_view.get_year()
             terminal_view.print_primitive_logo()
-            accounting.avg_amount(table, year)
+            terminal_view.print_result(accounting.avg_amount(table, year))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_primitive_logo()

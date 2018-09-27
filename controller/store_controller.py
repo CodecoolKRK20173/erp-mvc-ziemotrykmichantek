@@ -55,13 +55,13 @@ def run():
             table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
-            store.get_counts_by_manufacturers(table)
             terminal_view.print_primitive_logo()
+            terminal_view.print_result(store.get_counts_by_manufacturers(table))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
             manufacturer = terminal_view.get_manufacturer
-            store.get_average_by_manufacturer(table, manufacturer)
             terminal_view.print_primitive_logo()
+            terminal_view.print_result(store.get_average_by_manufacturer(table, manufacturer))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_primitive_logo()

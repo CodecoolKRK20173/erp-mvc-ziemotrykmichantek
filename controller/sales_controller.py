@@ -55,16 +55,15 @@ def run():
             table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
-            sales.get_lowest_price_item_id(table)
             terminal_view.print_primitive_logo()
+            terminal_view.print_result(sales.get_lowest_price_item_id(table))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
-            sales.get_items_sold_between(table)
             terminal_view.print_primitive_logo()
-            terminal_view.print_menu("Choose option:",options,"Back to main menu")
             inputs = terminal_view.get_from_to_date()
             month_from, day_from, year_from, month_to, day_to, year_to = inputs[0], inputs[1], inputs[2], inputs[3], inputs[4], inputs[5]
-            get_items_sold_between(table, month_from, day_from, year_from, month_to, day_to, year_to)
+            terminal_view.print_result(sales.get_items_sold_between(get_items_sold_between(table, month_from, day_from, year_from, month_to, day_to, year_to)))
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")            
         else:
             terminal_view.print_primitive_logo()
             terminal_view.print_error_message("There is no such choice.")

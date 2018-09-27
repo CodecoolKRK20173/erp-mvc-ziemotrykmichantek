@@ -55,12 +55,12 @@ def run():
             table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
-            inventory.get_available_items(table)
             terminal_view.print_primitive_logo()
+            terminal_view.print_result(inventory.get_available_items(table))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
-            inventory.get_average_durability_by_manufacturers(table)
             terminal_view.print_primitive_logo()
+            terminal_view.print_result(inventory.get_average_durability_by_manufacturers(table))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_primitive_logo()

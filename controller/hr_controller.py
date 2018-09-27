@@ -55,12 +55,12 @@ def run():
             table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
-            hr.get_oldest_person(table)
             terminal_view.print_primitive_logo()
+            terminal_view.print_result(hr.get_oldest_person(table))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
-            hr.get_persons_closest_to_average(table)
             terminal_view.print_primitive_logo()
+            terminal_view.print_result(hr.get_persons_closest_to_average(table))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_primitive_logo()
