@@ -64,6 +64,8 @@ def print_result(result, label):
     """
 
     # your code
+    print(result)
+    print(label)
 
 
 def print_menu(title, list_options, exit_message):
