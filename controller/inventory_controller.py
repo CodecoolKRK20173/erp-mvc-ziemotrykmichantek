@@ -24,6 +24,7 @@ def run():
 
     title_list = ["id", "name", "manufacturer", "purchase_year", "durability"]
     table = data_manager.get_table_from_file('model/inventory/inventory.csv')
+    file_name = 'model/inventory/inventory.csv'
 
     terminal_view.print_primitive_logo()
     terminal_view.print_menu("Choose option:",options,"Back to main menu")
@@ -32,7 +33,8 @@ def run():
         choice = terminal_view.get_choice()
         common.clear_function()
         if choice == "1":
-            inventory.add(table, terminal_view.get_record() )
+            data_manager.write_table_to_file(file_name ,inventory.add(table, terminal_view.get_record() ))
+            table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_primitive_logo()
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
@@ -42,12 +44,14 @@ def run():
         elif choice == "3":
             terminal_view.print_primitive_logo()
             terminal_view.print_table(table, title_list)
-            inventory.update(table, terminal_view.get_id() )
+            data_manager.write_table_to_file(file_name ,inventory.update(table, terminal_view.get_id() ))
+            table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "4":
             terminal_view.print_primitive_logo()
             terminal_view.print_table(table, title_list)
-            inventory.remove(table, terminal_view.get_id() )
+            data_manager.write_table_to_file(file_name ,inventory.remove(table, terminal_view.get_id() ))
+            table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
             inventory.get_available_items(table)

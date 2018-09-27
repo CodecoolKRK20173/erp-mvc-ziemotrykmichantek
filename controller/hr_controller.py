@@ -24,6 +24,7 @@ def run():
 
     title_list = ["id", "name", "birth_year"]
     table = data_manager.get_table_from_file('model/hr/persons.csv')
+    file_name = 'model/hr/persons.csv'
 
     terminal_view.print_primitive_logo()
     terminal_view.print_menu("Choose option:",options,"Back to main menu")
@@ -32,7 +33,8 @@ def run():
         choice = terminal_view.get_choice()
         common.clear_function()
         if choice == "1":
-            hr.add(table, terminal_view.get_record() )
+            data_manager.write_table_to_file(file_name ,hr.add(table, terminal_view.get_record() ))
+            table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_primitive_logo()
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
@@ -42,12 +44,14 @@ def run():
         elif choice == "3":
             terminal_view.print_primitive_logo()
             terminal_view.print_table(table, title_list)
-            hr.update(table, terminal_view.get_id() )
+            data_manager.write_table_to_file(file_name ,hr.update(table, terminal_view.get_id() ))
+            table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "4":
             terminal_view.print_primitive_logo()
             terminal_view.print_table(table, title_list)
-            hr.remove(table, terminal_view.get_id() )
+            data_manager.write_table_to_file(file_name ,hr.remove(table, terminal_view.get_id() ))
+            table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
             hr.get_oldest_person(table)
