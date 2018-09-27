@@ -34,8 +34,8 @@ def run():
         common.clear_function()
         if choice == "1":
             data_manager.write_table_to_file(file_name ,accounting.add(table, terminal_view.get_record() ))
-            table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_primitive_logo()
+            table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
             terminal_view.print_primitive_logo()
@@ -54,13 +54,13 @@ def run():
             table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
-            accounting.which_year_max(table)
             terminal_view.print_primitive_logo()
+            accounting.which_year_max(table)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
             year = terminal_view.get_year()
-            accounting.avg_amount(table, year)
             terminal_view.print_primitive_logo()
+            accounting.avg_amount(table, year)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_primitive_logo()

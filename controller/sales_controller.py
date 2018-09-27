@@ -34,12 +34,12 @@ def run():
         common.clear_function()
         if choice == "1":
             data_manager.write_table_to_file(file_name ,sales.add(table, terminal_view.get_record() ))
-            table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_primitive_logo()
+            table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
-            terminal_view.print_table(table, title_list)
             terminal_view.print_primitive_logo()
+            terminal_view.print_table(table, title_list)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "3":
             terminal_view.print_primitive_logo()
