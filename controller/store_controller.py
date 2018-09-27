@@ -54,6 +54,7 @@ def run():
             terminal_view.print_primitive_logo()
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
+            manufacturer = terminal_view.get_manufacturer
             store.get_average_by_manufacturer(table, manufacturer)
             terminal_view.print_primitive_logo()
             terminal_view.print_menu("Choose option:",options,"Back to main menu")

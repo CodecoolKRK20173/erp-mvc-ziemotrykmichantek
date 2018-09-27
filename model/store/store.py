@@ -101,4 +101,6 @@ def get_average_by_manufacturer(table, manufacturer):
     for record in table:
         if record[2] == manufacturer:
             in_stock_list.append(int(record[4]))
+    if len(in_stock_list) == 0:
+        in_stock_list.append(0)
     return sum(in_stock_list)/len(in_stock_list)
