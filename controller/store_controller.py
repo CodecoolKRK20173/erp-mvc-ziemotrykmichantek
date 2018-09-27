@@ -18,7 +18,9 @@ def run():
     options = ['Create',
                'Read',
                'Update',
-               'Delete']
+               'Delete',
+               'Check how many different kinds of games in data',
+               'Check avarage amount of games in stock of given manufacturer in data']
 
     title_list = ["id", "title", "manufacturer", "price", "in_stock"]
     table = data_manager.get_table_from_file('model/store/games.csv')

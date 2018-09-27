@@ -18,7 +18,9 @@ def run():
     options = ['Create',
                'Read',
                'Update',
-               'Delete']
+               'Delete',
+               'Show which year has the highest profit',
+               'Show the avarage profit in given year for every transaction']
 
     title_list = ["id", "month", "day", "year", "type", "amount"]
     table = data_manager.get_table_from_file('model/accounting/items.csv')

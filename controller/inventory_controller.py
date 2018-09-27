@@ -18,7 +18,9 @@ def run():
     options = ['Create',
                'Read',
                'Update',
-               'Delete']
+               'Delete',
+               'Show which items have not exceeded their durability',
+               'Show avarage durability time for each manufacturer']
 
     title_list = ["id", "name", "manufacturer", "purchase_year", "durability"]
     table = data_manager.get_table_from_file('model/inventory/inventory.csv')
