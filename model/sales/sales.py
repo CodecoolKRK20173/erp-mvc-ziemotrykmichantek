@@ -69,7 +69,7 @@ def special_function(table):
     return get_lowest_price_item_id(table)
 
 def special_function2(table):
-    dates = get_from_to_date()
+    dates = terminal_view.get_from_to_date()
     return get_items_sold_between(table, dates[0], dates[1], dates[2], dates[3], dates[4], dates[5])
 
 def get_lowest_price_item_id(table):
@@ -121,17 +121,17 @@ def get_items_sold_between(table, month_from, day_from, year_from, month_to, day
     list_of_items=[]
     month_from, day_from, year_from, month_to, day_to, year_to = int(month_from), int(day_from), int(year_from), int(month_to), int(day_to), int(year_to)
     for i, record in enumerate(table):
-        record_month = int(record[4])
-        record_day = int(record[5])
-        record_year = int(record[6])
+        record_month = int(record[3])
+        record_day = int(record[4])
+        record_year = int(record[5])
         if year_from < record_year < year_to:
             list_of_items.append(record)
         elif year_from == record_year or year_to == record_year:
-            if from_month < record_month < month_to:
+            if month_from < record_month < month_to:
                 list_of_items.append(record)
             elif month_from == record_month or month_to == record_month:
-                if from_day < record_day < day_to:
+                if day_from < record_day < day_to:
                     list_of_items.append(record)
-                elif from_day == record_day or to_day == record_day:
+                elif day_from == record_day or day_to == record_day:
                     list_of_items.append(record)
     return list_of_items

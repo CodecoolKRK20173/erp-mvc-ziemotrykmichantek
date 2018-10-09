@@ -82,11 +82,11 @@ def get_available_items(table):
         list: list of lists (the inner list contains the whole row with their actual data types)
     """
 
-    # your code
+    # your code!!!!!!!!!! You know, You  must write here Your code mate huehue
     for i in table:
         list_of_not_exceeded_items = []
         if int(i[3])+int(i[4]) >= 2016: # repository creation date
-            list_of_not_exceeded_items.append(table)
+            list_of_not_exceeded_items.append(i)
         return list_of_not_exceeded_items
 
 def get_average_durability_by_manufacturers(table):

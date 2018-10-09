@@ -128,7 +128,7 @@ class AccountingTester(unittest.TestCase):
     def test_avg_amount(self):
         table = data_manager.get_table_from_file(self.data_file)
         result = accounting.avg_amount(table, 2016)
-        self.assertEqual(result, 48.125)
+        self.assertEqual(result, 20.263157894736842)
 
 
 class CRMTester(unittest.TestCase):
@@ -140,7 +140,7 @@ class CRMTester(unittest.TestCase):
     def test_get_longest_name_id(self):
         table = data_manager.get_table_from_file(self.data_file)
         result = crm.get_longest_name_id(table)
-        self.assertEqual(result, "kH94Ju#&")
+        self.assertEqual(result, "kH38Jm#&")
 
     def test_get_subscribed_emails(self):
         table = data_manager.get_table_from_file(self.data_file)
@@ -187,7 +187,7 @@ class SalesTester(unittest.TestCase):
     def test_get_lowest_price_item_id(self):
         table = data_manager.get_table_from_file(self.data_file)
         result = sales.get_lowest_price_item_id(table)
-        self.assertEqual(result, "kH35Ju#&")
+        self.assertEqual(result, "kH34Ju#&")
 
     def test_get_items_sold_between(self):
         table = data_manager.get_table_from_file(self.data_file)

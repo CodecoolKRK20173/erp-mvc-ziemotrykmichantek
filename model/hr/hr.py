@@ -93,7 +93,6 @@ def get_oldest_person(table):
                 oldest_persons.append(record[1])
     return oldest_persons
 
-
 def get_persons_closest_to_average(table):
     """
     Question: Who is the closest to the average age?
@@ -106,22 +105,25 @@ def get_persons_closest_to_average(table):
     """
 
     # your code
-    closest_to_avarage_list = []
-    avarage_alpha = [float(record[2]) for record in table]
-    avarage = sum(avarage_alpha)/len(avarage_alpha)
-
-    for i, record in enumerate(table):
-        range_from_avarage = abs(avarage - float(range[2]))
+    list_of_birth_years = [int(person[2]) for person in table]
+    average_birth_year = sum(list_of_birth_years) / len(list_of_birth_years)
+    for i, person in enumerate(table):
+        current_name = person[1]
+        current_year = int(person[2])
+        range_from_year_to_average = abs(average_birth_year - current_year)
         if i == 0:
-            minimum_distance_from_avarage = abs(float(record[2])-avarage)
-            closest_to_avarage_record = record
-        elif minimum_distance_from_avarage > abs(float(record[2])-avarage):
-            minimum_distance_from_avarage = abs(float)
-            closest_to_avarage_record = record
-    closest_to_avarage_list.append(closest_to_avarage_record[1])
-    for i, record in enumerate(table):
-        range_from_avarage = abs(avarage - float(range[2]))
-        if record[1] not in closest_to_avarage_list:
-            if minimum_distance_from_avarage == abs(float(record[2])-avarage):
-                closest_to_avarage_list.append(record[1])
-    return closest_to_avarage_list
+            name_closest_to_average = current_name
+            year_closest_to_average = current_year
+            smallest_range_to_average = range_from_year_to_average
+            continue
+        if range_from_year_to_average < smallest_range_to_average:
+            name_closest_to_average = current_name
+            year_closest_to_average = current_year
+            smallest_range_to_average = range_from_year_to_average
+    list_of_names_closest_to_average = [name_closest_to_average]
+    for person in table:
+        current_name = person[1]
+        current_year = int(person[2])
+        if current_year == year_closest_to_average and current_name not in list_of_names_closest_to_average:
+            list_of_names_closest_to_average.append(current_name)
+    return list_of_names_closest_to_average
