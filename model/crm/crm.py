@@ -10,6 +10,7 @@ Data table structure:
 
 # everything you'll need is imported:
 from model import common
+from view import terminal_view
 
 
 def add(table, record):
@@ -63,6 +64,9 @@ def update(table, id_, record):
 # ------------------
 def special_function(table):
     return get_longest_name_id(table)
+
+def special_function2(table):
+    return get_subscribed_emails(table)
 
 def get_longest_name_id(table):
     """

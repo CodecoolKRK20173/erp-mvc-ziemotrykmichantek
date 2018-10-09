@@ -43,9 +43,8 @@ def common_controlls(options, title_list, file_name, controll_name, get_record_d
             terminal_view.print_result(controll_name.special_function(table))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
-            year = terminal_view.get_year()
             terminal_view.print_primitive_logo()
-            terminal_view.print_result(accounting.avg_amount(table, year))
+            terminal_view.print_result(controll_name.special_function2(table))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_primitive_logo()

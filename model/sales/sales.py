@@ -12,6 +12,7 @@ Data table structure:
 
 # everything you'll need is imported:
 from model import common
+from view import terminal_view
 
 
 def add(table, record):
@@ -66,6 +67,10 @@ def update(table, id_, record):
 # ------------------
 def special_function(table):
     return get_lowest_price_item_id(table)
+
+def special_function2(table):
+    dates = get_from_to_date()
+    return get_items_sold_between(table, dates[0], dates[1], dates[2], dates[3], dates[4], dates[5])
 
 def get_lowest_price_item_id(table):
     """

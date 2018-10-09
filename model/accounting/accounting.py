@@ -10,10 +10,10 @@ Data table structure:
     * amount (int): amount of transaction in USD
 """
 
-# everything you'll need is imported:
+
 from model import data_manager
 from model import common
-
+from view import terminal_view
 
 
 def add(table, record):
@@ -27,14 +27,14 @@ def add(table, record):
     Returns:
         list: Table with a new record
     """
-    # your code
+
     return common.common_add(table, record)
 
 
 def remove(table, id_):
     """
     Remove a record with a given id from the table.
-
+from view import terminal_view
     Args:
         table (list): table to remove a record from
         id_ (str): id of a record to be removed
@@ -43,7 +43,6 @@ def remove(table, id_):
         list: Table without specified record.
     """
 
-    # your code
     return common.common_remove(table, id_)
 
 
@@ -60,14 +59,15 @@ def update(table, id_, record):
         list: table with updated record
     """
 
-    # your code
     return common.common_update(table, id_, record)
 
 
-# special functions:
-# ------------------
 def special_function(table):
     return which_year_max(table)
+
+def special_function2(table):
+    year = terminal_view.get_year()
+    return avg_amount(table, year)
 
 def which_year_max(table):
     """
@@ -80,7 +80,6 @@ def which_year_max(table):
         number
     """
 
-    # your code
     years_and_profit_dict = {}
     for i, record in enumerate(table):
         year = record[3]
@@ -109,7 +108,6 @@ def avg_amount(table, year):
         number
     """
 
-    # your code
     profit = 0
     for i, record in enumerate(table):
         current_year = int(record[3])

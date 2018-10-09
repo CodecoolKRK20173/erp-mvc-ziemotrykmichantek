@@ -9,6 +9,7 @@ Data table structure:
 
 # everything you'll need is imported:
 from model import common
+from view import terminal_view
 
 
 
@@ -64,6 +65,9 @@ def update(table, id_, record):
 # ------------------
 def special_function(table):
     return get_oldest_person(table)
+
+def special_function2(table):
+    return get_persons_closest_to_average(table)
 
 def get_oldest_person(table):
     """

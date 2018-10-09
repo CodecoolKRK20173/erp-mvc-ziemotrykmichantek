@@ -11,6 +11,7 @@ Data table structure:
 
 # everything you'll need is imported:
 from model import common
+from view import terminal_view
 
 
 def add(table, record):
@@ -66,7 +67,10 @@ def update(table, id_, record):
 # ------------------
 def special_function(table):
     return get_available_items(table)
-    
+
+def special_function2(table):
+    return get_average_durability_by_manufacturers(table)
+
 def get_available_items(table):
     """
     Question: Which items have not exceeded their durability yet?
@@ -81,7 +85,7 @@ def get_available_items(table):
     # your code
     for i in table:
         list_of_not_exceeded_items = []
-        if int(table[3])+int(table[4]) >= 2016: # repository creation date
+        if int(i[3])+int(i[4]) >= 2016: # repository creation date
             list_of_not_exceeded_items.append(table)
         return list_of_not_exceeded_items
 

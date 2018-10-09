@@ -11,6 +11,7 @@ Data table structure:
 
 # everything you'll need is imported:
 from model import common
+from view import terminal_view
 
 def add(table, record):
     """
@@ -64,6 +65,11 @@ def update(table, id_, record):
 # ------------------
 def special_function(table):
     return get_counts_by_manufacturers(table)
+
+def special_function2(table):
+    manufacturer = terminal_view.get_manufacturer()
+    return get_average_by_manufacturer(table, manufacturer)
+
 
 def get_counts_by_manufacturers(table):
     """
