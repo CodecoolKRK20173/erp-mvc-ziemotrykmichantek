@@ -148,7 +148,7 @@ def print_error_message(message):
 def get_record(titles):
     inputs = get_inputs(titles[0],titles[1])
     return inputs
-    
+
 def get_id():
     id = input('Enter ID: ')
     return id
@@ -172,10 +172,22 @@ def get_manufacturer():
     manuf = input("What manufacturer are you interested in? ")
     return manuf
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 def print_primitive_logo():
-    print("""
-     __ __  __
-     |_ |__)|__)   _  _. _ .|_.     _  _ _ __  _ | _ |_  _
-     |__| \ |     |_)| ||||||_|\/  |_)| (-    (_|||_)| )(_|
-                  |                |              |
-    """)
+    print(bcolors.OKGREEN+bcolors.BOLD+bcolors.UNDERLINE+"""
+    ░/░/░/  ░/      ░/      ░/░/  ░/░/░/            ░/░/░/    ░/      ░/░/░/░/░/░/░/
+     ░/    ░/░/    ░/    ░/        ░/    ░/░/░/      ░/    ░/░/░/░/  ░/
+    ░/    ░/  ░/  ░/  ░/░/░/░/    ░/    ░/    ░/    ░/      ░/      ░/░/░/░/
+   ░/    ░/    ░/░/    ░/        ░/    ░/    ░/    ░/      ░/      ░/
+░/░/░/  ░/      ░/    ░/      ░/░/░/  ░/    ░/  ░/░/░/      ░/░/  ░/░/░/░/░/░/░/
+Pr0j3ct=
+"""+bcolors.ENDC)
