@@ -64,7 +64,9 @@ def update(table, id_, record):
 
 # special functions:
 # ------------------
-
+def special_function(table):
+    return get_available_items(table)
+    
 def get_available_items(table):
     """
     Question: Which items have not exceeded their durability yet?

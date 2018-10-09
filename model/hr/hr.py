@@ -62,6 +62,8 @@ def update(table, id_, record):
 
 # special functions:
 # ------------------
+def special_function(table):
+    return get_oldest_person(table)
 
 def get_oldest_person(table):
     """

@@ -24,46 +24,6 @@ def run():
 
     get_record_data = (['Name: ', 'Manufacturer: ', 'Purchase year: ', 'Durability: '], 'New Record:')
     title_list = ["id", "name", "manufacturer", "purchase_year", "durability"]
-    table = data_manager.get_table_from_file('model/inventory/inventory.csv')
     file_name = 'model/inventory/inventory.csv'
 
-    terminal_view.print_primitive_logo()
-    terminal_view.print_menu("Choose option:",options,"Back to main menu")
-    choice = None
-    while choice != "0":
-        choice = terminal_view.get_choice()
-        table = data_manager.get_table_from_file(file_name)
-        common.clear_function()
-        if choice == "1":
-            data_manager.write_table_to_file(file_name ,inventory.add(table, terminal_view.get_record(get_record_data) ))
-            terminal_view.print_primitive_logo()
-            table = data_manager.get_table_from_file('model/accounting/items.csv')
-            terminal_view.print_menu("Choose option:",options,"Back to main menu")
-        elif choice == "2":
-            terminal_view.print_primitive_logo()
-            terminal_view.print_table(table, title_list)
-            terminal_view.print_menu("Choose option:",options,"Back to main menu")
-        elif choice == "3":
-            terminal_view.print_primitive_logo()
-            terminal_view.print_table(table, title_list)
-            data_manager.write_table_to_file(file_name ,inventory.update(table, terminal_view.get_id() ))
-            table = data_manager.get_table_from_file('model/accounting/items.csv')
-            terminal_view.print_menu("Choose option:",options,"Back to main menu")
-        elif choice == "4":
-            terminal_view.print_primitive_logo()
-            terminal_view.print_table(table, title_list)
-            data_manager.write_table_to_file(file_name ,inventory.remove(table, terminal_view.get_id() ))
-            table = data_manager.get_table_from_file('model/accounting/items.csv')
-            terminal_view.print_menu("Choose option:",options,"Back to main menu")
-        elif choice == "5":
-            terminal_view.print_primitive_logo()
-            terminal_view.print_result(inventory.get_available_items(table))
-            terminal_view.print_menu("Choose option:",options,"Back to main menu")
-        elif choice == "6":
-            terminal_view.print_primitive_logo()
-            terminal_view.print_result(inventory.get_average_durability_by_manufacturers(table))
-            terminal_view.print_menu("Choose option:",options,"Back to main menu")
-        else:
-            terminal_view.print_primitive_logo()
-            terminal_view.print_error_message("There is no such choice.")
-            terminal_view.print_menu("Choose option:",options,"Back to main menu")
+    common.common_controlls(options, title_list, file_name, inventory, get_record_data)

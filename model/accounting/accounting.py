@@ -66,6 +66,8 @@ def update(table, id_, record):
 
 # special functions:
 # ------------------
+def special_function(table):
+    return which_year_max(table)
 
 def which_year_max(table):
     """

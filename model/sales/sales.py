@@ -64,6 +64,8 @@ def update(table, id_, record):
 
 # special functions:
 # ------------------
+def special_function(table):
+    return get_lowest_price_item_id(table)
 
 def get_lowest_price_item_id(table):
     """
