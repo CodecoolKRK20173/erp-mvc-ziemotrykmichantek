@@ -22,6 +22,7 @@ def run():
                'Show lowest prize item id',
                'Show items sold between given dates']
 
+    get_record_data = (['Title: ', 'Price: ', 'Month: ', 'Day: ', 'Year'], 'New title')
     title_list = ["id", "title", "price", "month", "day", "year"]
     table = data_manager.get_table_from_file('model/sales/sales.csv')
     file_name = 'model/sales/sales.csv'
@@ -34,7 +35,7 @@ def run():
         table = data_manager.get_table_from_file(file_name)
         common.clear_function()
         if choice == "1":
-            data_manager.write_table_to_file(file_name ,sales.add(table, terminal_view.get_record() ))
+            data_manager.write_table_to_file(file_name ,sales.add(table, terminal_view.get_record(get_record_data) ))
             terminal_view.print_primitive_logo()
             table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
@@ -63,7 +64,7 @@ def run():
             inputs = terminal_view.get_from_to_date()
             month_from, day_from, year_from, month_to, day_to, year_to = inputs[0], inputs[1], inputs[2], inputs[3], inputs[4], inputs[5]
             terminal_view.print_result(sales.get_items_sold_between(get_items_sold_between(table, month_from, day_from, year_from, month_to, day_to, year_to)))
-            terminal_view.print_menu("Choose option:",options,"Back to main menu")            
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             terminal_view.print_primitive_logo()
             terminal_view.print_error_message("There is no such choice.")

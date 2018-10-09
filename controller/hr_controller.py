@@ -21,7 +21,8 @@ def run():
                'Delete',
                'Show oldest person',
                'Show closest person to avarage age in data']
-
+               
+    get_record_data = (['Person name: ', 'Birth year: '], 'New Person:')
     title_list = ["id", "name", "birth_year"]
     table = data_manager.get_table_from_file('model/hr/persons.csv')
     file_name = 'model/hr/persons.csv'
@@ -34,7 +35,7 @@ def run():
         table = data_manager.get_table_from_file(file_name)
         common.clear_function()
         if choice == "1":
-            data_manager.write_table_to_file(file_name ,hr.add(table, terminal_view.get_record() ))
+            data_manager.write_table_to_file(file_name ,hr.add(table, terminal_view.get_record(get_record_data) ))
             table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_primitive_logo()
             terminal_view.print_menu("Choose option:",options,"Back to main menu")

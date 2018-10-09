@@ -78,7 +78,6 @@ def get_oldest_person(table):
     for i, record in enumerate(table):
         if i==0:
             oldest_person = record
-            #print(oldest_person)
         if int(oldest_person[2]) > int(record[2]):
             oldest_person = record
     oldest_persons = [oldest_person[1]]

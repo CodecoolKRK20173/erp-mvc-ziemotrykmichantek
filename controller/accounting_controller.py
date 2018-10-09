@@ -21,7 +21,7 @@ def run():
                'Delete',
                'Show which year has the highest profit',
                'Show the avarage profit in given year for every transaction']
-
+    get_record_data = (['Moth: ', 'Day: ', 'Year: ', 'Type: ', 'Amount'], 'New data:')
     title_list = ["id", "month", "day", "year", "type", "amount"]
     table = data_manager.get_table_from_file('model/accounting/items.csv')
     file_name = 'model/accounting/items.csv'
@@ -34,7 +34,7 @@ def run():
         table = data_manager.get_table_from_file(file_name)
         common.clear_function()
         if choice == "1":
-            data_manager.write_table_to_file(file_name ,accounting.add(table, terminal_view.get_record() ))
+            data_manager.write_table_to_file(file_name ,accounting.add(table, terminal_view.get_record(get_record_data) ))
             terminal_view.print_primitive_logo()
             table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")

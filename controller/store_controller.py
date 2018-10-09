@@ -22,6 +22,7 @@ def run():
                'Check how many different kinds of games in data',
                'Check avarage amount of games in stock of given manufacturer in data']
 
+    get_record_data = (['Title: ', 'Manufacturer: ', 'Price: ', 'In stock: '], 'New Record:')
     title_list = ["id", "title", "manufacturer", "price", "in_stock"]
     table = data_manager.get_table_from_file('model/store/games.csv')
     file_name = 'model/store/games.csv'
@@ -34,7 +35,7 @@ def run():
         table = data_manager.get_table_from_file(file_name)
         common.clear_function()
         if choice == "1":
-            data_manager.write_table_to_file(file_name ,store.add(table, terminal_view.get_record() ))
+            data_manager.write_table_to_file(file_name ,store.add(table, terminal_view.get_record(get_record_data) ))
             table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_primitive_logo()
             terminal_view.print_menu("Choose option:",options,"Back to main menu")

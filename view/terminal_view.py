@@ -145,10 +145,10 @@ def print_error_message(message):
     # your code
     print('Error: ', message)
 
-def get_record():
-    inputs = get_inputs(['Title: ', 'Manufacturer: ', 'Prize: ', 'In Stock: '], 'New record:')
+def get_record(titles):
+    inputs = get_inputs(titles[0],titles[1])
     return inputs
-
+    
 def get_id():
     id = input('Enter ID: ')
     return id

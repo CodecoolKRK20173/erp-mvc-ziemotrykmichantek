@@ -22,6 +22,7 @@ def run():
                'Show which items have not exceeded their durability',
                'Show avarage durability time for each manufacturer']
 
+    get_record_data = (['Name: ', 'Manufacturer: ', 'Purchase year: ', 'Durability: '], 'New Record:')
     title_list = ["id", "name", "manufacturer", "purchase_year", "durability"]
     table = data_manager.get_table_from_file('model/inventory/inventory.csv')
     file_name = 'model/inventory/inventory.csv'
@@ -34,7 +35,7 @@ def run():
         table = data_manager.get_table_from_file(file_name)
         common.clear_function()
         if choice == "1":
-            data_manager.write_table_to_file(file_name ,inventory.add(table, terminal_view.get_record() ))
+            data_manager.write_table_to_file(file_name ,inventory.add(table, terminal_view.get_record(get_record_data) ))
             terminal_view.print_primitive_logo()
             table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")

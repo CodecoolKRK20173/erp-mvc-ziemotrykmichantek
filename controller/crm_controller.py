@@ -22,6 +22,7 @@ def run():
                'Show the id of the customer with the longest name',
                'Show which customer has subcribed to the newsletter']
 
+    get_record_data = (['Name: ', 'Email: ', 'Subscribed: '], 'New person:')
     title_list = ["id", "name", "email", "subscribed"]
     table = data_manager.get_table_from_file('model/crm/customers.csv')
     file_name = 'model/crm/customers.csv'
@@ -34,7 +35,7 @@ def run():
         table = data_manager.get_table_from_file(file_name)
         common.clear_function()
         if choice == "1":
-            data_manager.write_table_to_file(file_name ,crm.add(table, terminal_view.get_record() ))
+            data_manager.write_table_to_file(file_name ,crm.add(table, terminal_view.get_record(get_record_data) ))
             terminal_view.print_primitive_logo()
             table = data_manager.get_table_from_file('model/accounting/items.csv')
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
