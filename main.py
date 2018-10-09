@@ -5,19 +5,19 @@ from controller import root_controller
 
 
 import sys
-import ui  # User Interface
+import view  # User Interface
 # Store module
-from store import store
+from model import store
 # Human Resources module
-from hr import hr
+from model import hr
 # Tool manager module
-from inventory import inventory
+from model import inventory
 # Accounting module
-from accounting import accounting
+from model import accounting
 # Sales module
-from sales import sales
+from model import sales
 # Customer Relationship Management (CRM) module
-from crm import crm
+from model import crm
 # Data Analyser module
 from data_analyser import data_analyser
 
