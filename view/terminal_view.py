@@ -90,12 +90,12 @@ def print_menu(title, list_options, exit_message):
     """
 
     # your code
-    print(title)
+    print(title.upper())
     id = 1
     for option in list_options:
-        print('     (' + str(id) + ') ' + option)
+        print('     [' + str(id) + '] ' + option.upper())
         id+=1
-    print('     (0) ' + exit_message)
+    print('     [0] ' + exit_message.upper())
 
 
 def get_inputs(list_labels, title):

@@ -16,7 +16,7 @@ def run():
 
     # your code
     options = ['Create',
-               'Read (dont use, function too primitive)',
+               'Read',
                'Update',
                'Delete',
                'Show oldest person',
