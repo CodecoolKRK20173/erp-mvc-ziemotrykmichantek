@@ -7,6 +7,8 @@ from controller import accounting_controller
 from controller import sales_controller
 from controller import crm_controller
 from controller import common
+from controller import data_analyser_controller
+from data_analyser import data_analyser
 
 
 def run():
@@ -15,7 +17,8 @@ def run():
                "Inventory manager",
                "Accounting manager",
                "Sales manager",
-               "Customer Relationship Management (CRM)"]
+               "Customer Relationship Management (CRM)",
+               "Data anal yser"]
 
     choice = None
     while choice != "0":
@@ -36,5 +39,7 @@ def run():
             sales_controller.run()
         elif choice == "6":
             crm_controller.run()
+        elif choice == "7":
+            data_analyser_controller.run()
         else:
             terminal_view.print_error_message("There is no such choice.")

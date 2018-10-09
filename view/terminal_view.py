@@ -1,3 +1,7 @@
+from view import getch_module
+
+getch = getch_module.instant_input()
+
 """ Terminal view module """
 
 def print_table(table, title_list):
@@ -64,7 +68,6 @@ def print_result(result):
         None: This function doesn't return anything it only prints to console.
     """
 
-    # your code
     print(result)
 
 
@@ -89,7 +92,6 @@ def print_menu(title, list_options, exit_message):
         None: This function doesn't return anything it only prints to console.
     """
 
-    # your code
     print(title.upper())
     id = 1
     for option in list_options:
@@ -99,27 +101,7 @@ def print_menu(title, list_options, exit_message):
 
 
 def get_inputs(list_labels, title):
-    """
-    Gets list of inputs from the user.
-    Sample call:
-        get_inputs(["Name","Surname","Age"],"Please provide your personal information")
-    Sample display:
-        Please provide your personal information
-        Name <user_input_1>
-        Surname <user_input_2>
-        Age <user_input_3>
-
-    Args:
-        list_labels (list): labels of inputs
-        title (string): title of the "input section"
-
-    Returns:
-        list: List of data given by the user. Sample return:
-            [<user_input_1>, <user_input_2>, <user_input_3>]
-    """
     inputs = []
-
-    # your code
     print(title)
     for question in list_labels:
         inputs.append(input(question))
@@ -127,22 +109,11 @@ def get_inputs(list_labels, title):
     return inputs
 
 def get_choice():
-
-    inputs = get_inputs(["Please enter a number: "], "")
-    return inputs[0]
+    print('\nChoose option. ')
+    inputs = getch()
+    return inputs
 
 def print_error_message(message):
-    """
-    Displays an error message (example: ``Error: @message``)
-
-    Args:
-        message (str): error message to be displayed
-
-    Returns:
-        None: This function doesn't return anything it only prints to console.
-    """
-
-    # your code
     print('Error: ', message)
 
 def get_record(titles):

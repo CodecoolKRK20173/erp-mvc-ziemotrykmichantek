@@ -20,7 +20,7 @@ def common_controlls(options, title_list, file_name, controll_name, get_record_d
         if choice == "1":
             data_manager.write_table_to_file(file_name ,controll_name.add(table, terminal_view.get_record(get_record_data) ))
             terminal_view.print_primitive_logo()
-            table = data_manager.get_table_from_file('model/accounting/items.csv')
+            table = data_manager.get_table_from_file(file_name)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
             terminal_view.print_primitive_logo()
@@ -30,13 +30,13 @@ def common_controlls(options, title_list, file_name, controll_name, get_record_d
             terminal_view.print_primitive_logo()
             terminal_view.print_table(table, title_list)
             data_manager.write_table_to_file(file_name ,controll_name.update(table, terminal_view.get_id() ))
-            table = data_manager.get_table_from_file('model/accounting/items.csv')
+            table = data_manager.get_table_from_file(file_name)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "4":
             terminal_view.print_primitive_logo()
             terminal_view.print_table(table, title_list)
             data_manager.write_table_to_file(file_name ,controll_name.remove(table, terminal_view.get_id() ))
-            table = data_manager.get_table_from_file('model/accounting/items.csv')
+            table = data_manager.get_table_from_file(file_name)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
             terminal_view.print_primitive_logo()
