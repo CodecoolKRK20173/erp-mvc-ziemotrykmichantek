@@ -18,7 +18,7 @@ def run():
                "Accounting manager",
                "Sales manager",
                "Customer Relationship Management (CRM)",
-               "Data anal yser"]
+               "Data analyser"]
 
     choice = None
     while choice != "0":
