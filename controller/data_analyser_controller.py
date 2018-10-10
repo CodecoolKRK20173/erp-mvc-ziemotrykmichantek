@@ -31,19 +31,25 @@ def run():
     terminal_view.print_menu("Choose option:",options,"Back to main menu")
     choice = None
     while choice != "0":
-        choice = terminal_view.get_choice()
         table = data_manager.get_table_from_file(file_name)
+        choice = terminal_view.get_choice()
         os.system('clear')
         terminal_view.print_primitive_logo()
         if choice == "1":
-            data_analyser.get_the_last_buyer_name_or_id(table, True)
+            terminal_view.print_result(data_analyser.get_the_last_buyer_name_or_id(table, True))
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "2":
-            data_analyser.get_the_last_buyer_name_or_id(table, False)
+            terminal_view.print_result(data_analyser.get_the_last_buyer_name_or_id(table, False))
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "3":
-            data_analyser.get_customer_money_spent_id_or_name(table, True)
+            terminal_view.print_result(data_analyser.get_customer_money_spent_id_or_name(table, True))
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "4":
-            data_analyser.get_customer_money_spent_id_or_name(table, False)
+            terminal_view.print_result(data_analyser.get_customer_money_spent_id_or_name(table, False))
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "5":
-            data_analyser.get_the_most_frequent_buyers_id_or_name(table, True)
+            terminal_view.print_result(data_analyser.get_the_most_frequent_buyers_id_or_name(table, True))
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "6":
-            data_analyser.get_the_most_frequent_buyers_id_or_name(table, False)
+            terminal_view.print_result(data_analyser.get_the_most_frequent_buyers_id_or_name(table, False))
+            terminal_view.print_menu("Choose option:",options,"Back to main menu")

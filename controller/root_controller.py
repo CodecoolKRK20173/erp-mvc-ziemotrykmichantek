@@ -42,4 +42,4 @@ def run():
         elif choice == "7":
             data_analyser_controller.run()
         else:
-            terminal_view.print_error_message("There is no such choice.")
+            pass
