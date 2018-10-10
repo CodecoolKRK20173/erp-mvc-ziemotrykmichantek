@@ -23,9 +23,8 @@ def run():
                "View the most frequent buyer name",
                "View the most frequent buyer ID"]
 
-    get_record_data = (['Title: ', 'Price: ', 'Month: ', 'Day: ', 'Year'], 'New title')
-    title_list = ["id", "title", "price", "month", "day", "year"]
-    file_name = 'model/sales/sales.csv'
+    title_list = ["id", "customer", "Tittle", "price", "month", "day", "year"]
+    file_name = 'data_analyser/buyers.csv'
 
     table = data_manager.get_table_from_file(file_name)
     terminal_view.print_primitive_logo()

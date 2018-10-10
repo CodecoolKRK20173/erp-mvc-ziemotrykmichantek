@@ -1,3 +1,15 @@
+""" Data analyser module
+
+Data table structure:
+    * id (string): Unique and random generated identifier
+        at least 2 special characters (except: ';'), 2 number, 2 lower and 2 upper case letters)
+    * customer
+    * tittle of game
+    * price
+    * month (number): Month of the sale
+    * day (number): Day of the sale
+    * year (number): Year of the sale
+"""
 """
 This module creates reports for the marketing department.
 This module can run independently from other modules.
