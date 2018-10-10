@@ -116,8 +116,6 @@ def get_subscribed_emails(table):
 # functions supports data analyser
 # --------------------------------
 
-
-
 def get_name_by_id_from_table(table, id):
     """
     Returns the name (str) of the customer with the given id (str) on None om case of non-existing id.
