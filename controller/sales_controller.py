@@ -33,4 +33,4 @@ def run():
     title_list = ["id", "title", "price", "month", "day", "year"]
     file_name = 'model/sales/sales.csv'
 
-    common.common_controlls(options, title_list, file_name, sales, get_record_data)
+    common.common_controlls(options, title_list, file_name, sales, get_record_data, True)

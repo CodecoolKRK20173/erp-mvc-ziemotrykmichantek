@@ -151,9 +151,13 @@ def get_title_by_id_from_table(table, id):
     """
 
     # your code
+    for line in table:
+        if line[0] == id:
+            return line[2]
+    return "No such ID"
 
 
-def get_item_id_or_title_sold_last_from_table(table, true_or_not):
+def get_item_id_or_title_sold_last_from_table(table, id_or_title):
     """
     Returns the _id_ of the item that was sold most recently.
 
@@ -165,22 +169,37 @@ def get_item_id_or_title_sold_last_from_table(table, true_or_not):
     """
 
     # your code
+    print(table)
+    for i, line in enumerate(table):
+        current_date_int = int(line[6]) + int(line[4]) + int(line[5])
+        current_id_and_title = (line[0], line[2])
+        if i == 0:
+            last_sold_date = current_date_int
+            last_title_id_and_name = current_id_and_title
+            continue
+        if current_date_int > last_sold_date:
+            last_sold_date = current_date_int
+            last_title_id_and_name = current_id_and_title
+    if id_or_title:
+        return last_title_id_and_name[2]
+    else:
+        return last_title_id_and_name[0]
 
 
-
-def get_the_sum_of_prices_from_table(table, item_ids):
+def get_the_sum_of_prices_from_table(table):
     """
     Returns the sum of the prices of the items in the item_ids.
 
     Args:
         table (list of lists): the sales table
-        item_ids (list of str): the ids
 
     Returns:
         number: the sum of the items' prices
     """
 
     # your code
+    return sum(list(map(lambda element: int(element[3]), table)))
+
 
 def get_customer_id_by_sale_id_from_table(table, sale_id):
     """
@@ -193,7 +212,6 @@ def get_customer_id_by_sale_id_from_table(table, sale_id):
     Returns:
         str: customer_id that belongs to the given sale id
     """
-
     # your code
 
 

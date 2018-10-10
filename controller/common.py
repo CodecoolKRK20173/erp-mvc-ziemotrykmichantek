@@ -48,7 +48,8 @@ def common_controlls(options, title_list, file_name, controll_name, get_record_d
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
             if crm_or_extended_sales:
-                pass
+                extended_sales(choice, controll_name)
+                terminal_view.print_menu("Choose option:",options,"Back to main menu")
             elif not crm_or_extended_sales:
                 pass
             else:
@@ -56,14 +57,17 @@ def common_controlls(options, title_list, file_name, controll_name, get_record_d
                 terminal_view.print_error_message("There is no such choice.")
                 terminal_view.print_menu("Choose option:",options,"Back to main menu")
 
-def extended_sales(choice):
+def extended_sales(choice, controll_name):
     table = data_manager.get_table_from_file('data_analyser/buyers.csv')
     if choice == "7":
-        pass
+        terminal_view.print_primitive_logo()
+        terminal_view.print_result(controll_name.get_title_by_id_from_table(table, terminal_view.get_id()))
     elif choice == "8":
-        pass
+        terminal_view.print_primitive_logo()
+        terminal_view.print_result(controll_name.get_item_id_or_title_sold_last_from_table(table, False))
     elif choice == "9":
-        pass
+        terminal_view.print_primitive_logo()
+        terminal_view.print_result(controll_name.get_the_sum_of_prices_from_table(table))
     elif choice == "10":
         pass
     elif choice == "11":
