@@ -129,3 +129,7 @@ def get_name_by_id_from_table(table, id):
     """
 
     # your code
+    for line in table:
+        if id == line[0]:
+            return line[1]
+    return 'No such ID'

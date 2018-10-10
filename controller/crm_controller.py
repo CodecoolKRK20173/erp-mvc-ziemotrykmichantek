@@ -20,10 +20,11 @@ def run():
                'Update',
                'Delete',
                'Show the id of the customer with the longest name',
-               'Show which customer has subcribed to the newsletter']
+               'Show which customer has subcribed to the newsletter',
+               'Show customer\'s name by ID']
 
     get_record_data = (['Name: ', 'Email: ', 'Subscribed: '], 'New person:')
     title_list = ["id", "name", "email", "subscribed"]
     file_name = 'model/crm/customers.csv'
 
-    common.common_controlls(options, title_list, file_name, crm, get_record_data)
+    common.common_controlls(options, title_list, file_name, crm, get_record_data, False)

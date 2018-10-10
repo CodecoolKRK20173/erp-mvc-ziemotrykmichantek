@@ -93,10 +93,14 @@ def print_menu(title, list_options, exit_message):
     """
 
     print(title.upper())
-    id = 1
-    for option in list_options:
-        print('     [' + str(id) + '] ' + option.upper())
-        id+=1
+    letters_tuple = ("A","B","C","D","E","F","G")
+    letters_index = 0
+    for id, option in enumerate(list_options):
+        if id+1 < 10:
+            print('     [' + str(id+1) + '] ' + option.upper())
+        else:
+            print('     [' + letters_tuple[letters_index] + '] ' + option.upper())
+            letters_index += 1
     print('     [0] ' + exit_message.upper())
 
 

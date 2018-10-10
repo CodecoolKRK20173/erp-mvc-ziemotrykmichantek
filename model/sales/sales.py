@@ -213,6 +213,10 @@ def get_customer_id_by_sale_id_from_table(table, sale_id):
         str: customer_id that belongs to the given sale id
     """
     # your code
+    for line in table:
+        if sale_id == line[7]:
+            return line[0]
+    return 'No such ID'
 
 
 def get_all_customer_ids_from_table(table):
@@ -226,6 +230,7 @@ def get_all_customer_ids_from_table(table):
     """
 
     # your code
+    return set(map(lambda element: element[0], table))
 
 
 def get_all_sales_ids_for_customer_ids_from_table(table):
@@ -237,12 +242,20 @@ def get_all_sales_ids_for_customer_ids_from_table(table):
     Args:
         table (list of list): the sales table
     Returns:
-         (dict of (key, value): (customer_id, (list) sale_ids)) where the sale_ids list contains
+         (dict of (key, value): {customer_id: (list) sale_ids}) where the sale_ids list contains
          all the sales id belong to the given customer_id
     """
 
     # your code
-
+    customer_and_sales_ids = {}
+    for line in table:
+        customer_id = line[0]
+        sales_id = line[7]
+        if customer_id not in customer_and_sales_ids:
+            customer_and_sales_ids[customer_id] = [sales_id]
+        else:
+            customer_and_sales_ids[customer_id].append(sales_id)
+    return customer_and_sales_ids
 
 def get_num_of_sales_per_customer_ids_from_table(table):
     """
@@ -256,3 +269,11 @@ def get_num_of_sales_per_customer_ids_from_table(table):
     """
 
     # your code
+    customer_and_number_of_sales = {}
+    for line in table:
+        customer_id = line[0]
+        if customer_id not in customer_and_number_of_sales:
+            customer_and_number_of_sales[customer_id] = 1
+        else:
+            customer_and_number_of_sales[customer_id] += 1
+    return customer_and_number_of_sales

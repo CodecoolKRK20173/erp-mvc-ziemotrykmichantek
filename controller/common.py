@@ -14,7 +14,7 @@ def common_controlls(options, title_list, file_name, controll_name, get_record_d
     terminal_view.print_menu("Choose option:",options,"Back to main menu")
     choice = None
     while choice != "0":
-        choice = terminal_view.get_choice()
+        choice = terminal_view.get_choice().upper()
         table = data_manager.get_table_from_file(file_name)
         clear_function()
         if choice == "1":
@@ -51,7 +51,8 @@ def common_controlls(options, title_list, file_name, controll_name, get_record_d
                 extended_sales(choice, controll_name)
                 terminal_view.print_menu("Choose option:",options,"Back to main menu")
             elif not crm_or_extended_sales:
-                pass
+                extended_crm(choice, table, controll_name)
+                terminal_view.print_menu("Choose option:",options,"Back to main menu")
             else:
                 terminal_view.print_primitive_logo()
                 terminal_view.print_error_message("There is no such choice.")
@@ -68,15 +69,19 @@ def extended_sales(choice, controll_name):
     elif choice == "9":
         terminal_view.print_primitive_logo()
         terminal_view.print_result(controll_name.get_the_sum_of_prices_from_table(table))
-    elif choice == "10":
-        pass
-    elif choice == "11":
-        pass
-    elif choice == "12":
-        pass
-    elif choice == "13":
-        pass
+    elif choice == "A":
+        terminal_view.print_primitive_logo()
+        terminal_view.print_result(controll_name.get_customer_id_by_sale_id_from_table(table, terminal_view.get_id()))
+    elif choice == "B":
+        terminal_view.print_primitive_logo()
+        terminal_view.print_result(controll_name.get_all_customer_ids_from_table(table))
+    elif choice == "C":
+        terminal_view.print_primitive_logo()
+        terminal_view.print_result(controll_name.get_all_sales_ids_for_customer_ids_from_table(table))
+    elif choice == "D":
+        terminal_view.print_primitive_logo()
+        terminal_view.print_result(controll_name.get_num_of_sales_per_customer_ids_from_table(table, terminal_view.get_id()))
 
-def extended_crm(choice, table):
+def extended_crm(choice, table, controll_name):
     if choice == "7":
-        pass
+        terminal_view.print_result(controll_name.get_name_by_id_from_table(table, terminal_view.get_id()))

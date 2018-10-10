@@ -26,8 +26,8 @@ def run():
                'Show the sum of all item\'s prizes',
                'Show customer ID by sale ID',
                'Show all customer\'s ID',
-               'Show all sales ID\'s',
-               'Show number of sales per customer']
+               'Show all sales ID\'s for every customer ID',
+               'Show number of sales per customer ID\'s']
 
     get_record_data = (['Title: ', 'Price: ', 'Month: ', 'Day: ', 'Year'], 'New title')
     title_list = ["id", "title", "price", "month", "day", "year"]
