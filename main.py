@@ -5,6 +5,7 @@ from controller import root_controller
 
 
 import sys
+from music_player import play_soundtrack
 from view import terminal_view  # User Interface
 # Store module
 from model import store
@@ -26,4 +27,5 @@ def main():
 
 
 if __name__ == '__main__':
+    play_soundtrack.start()
     main()
