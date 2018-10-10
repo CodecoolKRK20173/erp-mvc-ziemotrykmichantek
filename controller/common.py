@@ -8,7 +8,7 @@ import os
 def clear_function():
     os.system('clear')
 
-def common_controlls(options, title_list, file_name, controll_name, get_record_data):
+def common_controlls(options, title_list, file_name, controll_name, get_record_data, crm_or_extended_sales=None):
     table = data_manager.get_table_from_file(file_name)
     terminal_view.print_primitive_logo()
     terminal_view.print_menu("Choose option:",options,"Back to main menu")
@@ -47,6 +47,32 @@ def common_controlls(options, title_list, file_name, controll_name, get_record_d
             terminal_view.print_result(controll_name.special_function2(table))
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         else:
-            terminal_view.print_primitive_logo()
-            terminal_view.print_error_message("There is no such choice.")
-            terminal_view.print_menu("Choose option:",options,"Back to main menu")
+            if crm_or_extended_sales:
+                pass
+            elif not crm_or_extended_sales:
+                pass
+            else:
+                terminal_view.print_primitive_logo()
+                terminal_view.print_error_message("There is no such choice.")
+                terminal_view.print_menu("Choose option:",options,"Back to main menu")
+
+def extended_sales(choice):
+    table = data_manager.get_table_from_file('data_analyser/buyers.csv')
+    if choice == "7":
+        pass
+    elif choice == "8":
+        pass
+    elif choice == "9":
+        pass
+    elif choice == "10":
+        pass
+    elif choice == "11":
+        pass
+    elif choice == "12":
+        pass
+    elif choice == "13":
+        pass
+
+def extended_crm(choice, table):
+    if choice == "7":
+        pass

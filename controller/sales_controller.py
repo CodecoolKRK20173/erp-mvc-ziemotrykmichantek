@@ -20,7 +20,14 @@ def run():
                'Update',
                'Delete',
                'Show lowest prize item id',
-               'Show items sold between given dates']
+               'Show items sold between given dates',
+               'Show title by ID',
+               'Show ID of the last sold item',
+               'Show the sum of all item\'s prizes',
+               'Show customer ID by sale ID',
+               'Show all customer\'s ID',
+               'Show all sales ID\'s',
+               'Show number of sales per customer']
 
     get_record_data = (['Title: ', 'Price: ', 'Month: ', 'Day: ', 'Year'], 'New title')
     title_list = ["id", "title", "price", "month", "day", "year"]
