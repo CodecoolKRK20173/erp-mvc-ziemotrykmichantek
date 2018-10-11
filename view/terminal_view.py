@@ -158,11 +158,17 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 def print_primitive_logo():
-    print(bcolors.OKGREEN+bcolors.BOLD+bcolors.UNDERLINE+"""
-    ░/░/░/  ░/      ░/      ░/░/  ░/░/░/            ░/░/░/    ░/      ░/░/░/░/░/░/░/
-     ░/    ░/░/    ░/    ░/        ░/    ░/░/░/      ░/    ░/░/░/░/  ░/
-    ░/    ░/  ░/  ░/  ░/░/░/░/    ░/    ░/    ░/    ░/      ░/      ░/░/░/░/
-   ░/    ░/    ░/░/    ░/        ░/    ░/    ░/    ░/      ░/      ░/
-░/░/░/  ░/      ░/    ░/      ░/░/░/  ░/    ░/  ░/░/░/      ░/░/  ░/░/░/░/░/░/░/
-Pr0j3ct=
+    print(bcolors.OKGREEN+bcolors.BOLD+"""
+          -ooooooooo.    Pr0j3ct     ---------.                .+oooo++++++++++++++++.
+          :yyhNNmyyy.              .hNNmmmmmmmy                :hhhhhhhhhmNmddddddddd/
+             sNN-                  sNN:                                 .mNs   .://///////-
+            /NN+                  -NNmsssssso                           +NN-   sNNdddddmmmh
+           .mNy   .-       --     hNdyyyyyyys.     ..       ..    .     mNy   .NNo
+           hNd.  :mms     sNd    +NN:       .+/   :dd/     yms   sh+   +NN:   sNN.
+          oNN:  .dNNNo   :NN+   .mNs        hNd   hNNN/   :NN/  :NN+   dNh   .mNNhhhhhhy-
+         :NN+   sNmsNN/  dNh    yNm.       :NN/  /NNyNN/  dNd   hNd   /NN/   +NNo+ooooo+.
+        .mNy   :NN+ sNm:oNN-   /NN/        dNd   dNh sNm//NN:  :NN+   hNd    mNy
+        hNm.  .dNh   hNmNNo   .dNh        /NN:  /NN:  sNmmNy   hNd   :NN/   +NN:
+    /ssyNNhs+ sNm-   .dNNd    sNN-        mNh   dNh    sNNN-  :NN/   hNm    dNm++/////
+    /yyyyyyys +y:     -ys-    oy/        .sy-   yy-     +s/   /hy    yh/    yddddddddh-
 """+bcolors.ENDC)
