@@ -67,11 +67,21 @@ def print_result(result):
     Returns:
         None: This function doesn't return anything it only prints to console.
     """
-    if type(result) is int or type(result) is str or type(result) is float:
+    """if type(result) is int or type(result) is str or type(result) is float:
         print(type(result))
     elif type(result) is list or type(result) is tuple or type(result) is dict or type(result) is set:
         for i, element in enumerate(result):
             print(str(i+1)+'.', element)
+    else:"""
+    if type(result) is dict:
+        for key, value in result.items():
+            print(key, ':', value)
+    elif type(result) is list:
+        for line in result:
+            print('1. ', line)
+    elif type(result) is set:
+        for line in result:
+            print('1. ', line)
     else:
         print(result)
     print()
