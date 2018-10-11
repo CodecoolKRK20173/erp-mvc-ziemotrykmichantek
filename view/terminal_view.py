@@ -67,8 +67,14 @@ def print_result(result):
     Returns:
         None: This function doesn't return anything it only prints to console.
     """
-
-    print(result)
+    if type(result) is int or type(result) is str or type(result) is float:
+        print(type(result))
+    elif type(result) is list or type(result) is tuple or type(result) is dict or type(result) is set:
+        for i, element in enumerate(result):
+            print(str(i+1)+'.', element)
+    else:
+        print(result)
+    print()
 
 
 def print_menu(title, list_options, exit_message):
@@ -97,11 +103,11 @@ def print_menu(title, list_options, exit_message):
     letters_index = 0
     for id, option in enumerate(list_options):
         if id+1 < 10:
-            print('     [' + str(id+1) + '] ' + option.upper())
+            print('\n     [' + str(id+1) + '] ' + option.upper())
         else:
-            print('     [' + letters_tuple[letters_index] + '] ' + option.upper())
+            print('\n     [' + letters_tuple[letters_index] + '] ' + option.upper())
             letters_index += 1
-    print('     [0] ' + exit_message.upper())
+    print('\n     [0] ' + exit_message.upper())
 
 
 def get_inputs(list_labels, title):
