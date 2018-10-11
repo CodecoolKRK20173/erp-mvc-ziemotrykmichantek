@@ -12,7 +12,7 @@ def demo(screen):
     effects = [
         Rain(screen,99**99,),
         Print(screen,
-              FigletText("Pr0j3ct InFInIt3",
+              FigletText("Pr()j3ct 1/\/FIn1t3",
                          font='banner3' if screen.width > 80 else 'banner'),
               screen.height//2-3,
               colour=2, bg=2),
