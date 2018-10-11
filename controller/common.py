@@ -51,7 +51,7 @@ def common_controlls(options, title_list, file_name, controll_name, get_record_d
                 extended_sales(choice, controll_name)
                 terminal_view.print_menu("Choose option:",options,"Back to main menu")
             elif not crm_or_extended_sales:
-                extended_crm(choice, table, controll_name)
+                extended_crm(choice, table, controll_name, title_list)
                 terminal_view.print_menu("Choose option:",options,"Back to main menu")
             else:
                 terminal_view.print_primitive_logo()
@@ -60,8 +60,10 @@ def common_controlls(options, title_list, file_name, controll_name, get_record_d
 
 def extended_sales(choice, controll_name):
     table = data_manager.get_table_from_file('data_analyser/buyers.csv')
+    title_list = ["buyer id", "name","title", "price", "month", "day", "year", "sale id"]
     if choice == "7":
         terminal_view.print_primitive_logo()
+        terminal_view.print_table(table, title_list)
         terminal_view.print_result(controll_name.get_title_by_id_from_table(table, terminal_view.get_id()))
     elif choice == "8":
         terminal_view.print_primitive_logo()
@@ -71,6 +73,7 @@ def extended_sales(choice, controll_name):
         terminal_view.print_result(controll_name.get_the_sum_of_prices_from_table(table))
     elif choice == "A":
         terminal_view.print_primitive_logo()
+        terminal_view.print_table(table, title_list)
         terminal_view.print_result(controll_name.get_customer_id_by_sale_id_from_table(table, terminal_view.get_id()))
     elif choice == "B":
         terminal_view.print_primitive_logo()
@@ -80,8 +83,10 @@ def extended_sales(choice, controll_name):
         terminal_view.print_result(controll_name.get_all_sales_ids_for_customer_ids_from_table(table))
     elif choice == "D":
         terminal_view.print_primitive_logo()
+        terminal_view.print_table(table, title_list)
         terminal_view.print_result(controll_name.get_num_of_sales_per_customer_ids_from_table(table, terminal_view.get_id()))
 
-def extended_crm(choice, table, controll_name):
+def extended_crm(choice, table, controll_name, title_list):
     if choice == "7":
+        terminal_view.print_table(table, title_list)
         terminal_view.print_result(controll_name.get_name_by_id_from_table(table, terminal_view.get_id()))

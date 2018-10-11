@@ -67,11 +67,21 @@ def print_result(result):
     Returns:
         None: This function doesn't return anything it only prints to console.
     """
-    if type(result) is int or type(result) is str or type(result) is float:
+    """if type(result) is int or type(result) is str or type(result) is float:
         print(type(result))
     elif type(result) is list or type(result) is tuple or type(result) is dict or type(result) is set:
         for i, element in enumerate(result):
             print(str(i+1)+'.', element)
+    else:"""
+    if type(result) is dict:
+        for key, value in result.items():
+            print(key, ':', value)
+    elif type(result) is list:
+        for line in result:
+            print('1. ', line)
+    elif type(result) is set:
+        for line in result:
+            print('1. ', line)
     else:
         print(result)
     print()
@@ -164,11 +174,17 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 def print_primitive_logo():
-    print(bcolors.OKGREEN+bcolors.BOLD+bcolors.UNDERLINE+"""
-    ░/░/░/  ░/      ░/      ░/░/  ░/░/░/            ░/░/░/    ░/      ░/░/░/░/░/░/░/
-     ░/    ░/░/    ░/    ░/        ░/    ░/░/░/      ░/    ░/░/░/░/  ░/
-    ░/    ░/  ░/  ░/  ░/░/░/░/    ░/    ░/    ░/    ░/      ░/      ░/░/░/░/
-   ░/    ░/    ░/░/    ░/        ░/    ░/    ░/    ░/      ░/      ░/
-░/░/░/  ░/      ░/    ░/      ░/░/░/  ░/    ░/  ░/░/░/      ░/░/  ░/░/░/░/░/░/░/
-Pr0j3ct=
+    print(bcolors.OKGREEN+bcolors.BOLD+"""
+          -ooooooooo.    Pr0j3ct     ---------.                .+oooo++++++++++++++++.
+          :yyhNNmyyy.              .hNNmmmmmmmy                :hhhhhhhhhmNmddddddddd/
+             sNN-                  sNN:                                 .mNs   .://///////-
+            /NN+                  -NNmsssssso                           +NN-   sNNdddddmmmh
+           .mNy   .-       --     hNdyyyyyyys.     ..       ..    .     mNy   .NNo
+           hNd.  :mms     sNd    +NN:       .+/   :dd/     yms   sh+   +NN:   sNN.
+          oNN:  .dNNNo   :NN+   .mNs        hNd   hNNN/   :NN/  :NN+   dNh   .mNNhhhhhhy-
+         :NN+   sNmsNN/  dNh    yNm.       :NN/  /NNyNN/  dNd   hNd   /NN/   +NNo+ooooo+.
+        .mNy   :NN+ sNm:oNN-   /NN/        dNd   dNh sNm//NN:  :NN+   hNd    mNy
+        hNm.  .dNh   hNmNNo   .dNh        /NN:  /NN:  sNmmNy   hNd   :NN/   +NN:
+    /ssyNNhs+ sNm-   .dNNd    sNN-        mNh   dNh    sNNN-  :NN/   hNm    dNm++/////
+    /yyyyyyys +y:     -ys-    oy/        .sy-   yy-     +s/   /hy    yh/    yddddddddh-
 """+bcolors.ENDC)
