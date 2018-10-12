@@ -29,7 +29,7 @@ def common_controlls(options, title_list, file_name, controll_name, get_record_d
         elif choice == "3":
             terminal_view.print_primitive_logo()
             terminal_view.print_table(table, title_list)
-            data_manager.write_table_to_file(file_name ,controll_name.update(table, terminal_view.get_id() ))
+            data_manager.write_table_to_file(file_name ,controll_name.update(table, terminal_view.get_id(), terminal_view.get_record(get_record_data) ))
             table = data_manager.get_table_from_file(file_name)
             terminal_view.print_menu("Choose option:",options,"Back to main menu")
         elif choice == "4":

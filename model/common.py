@@ -47,9 +47,11 @@ def common_remove(table, id_):
     return table
 
 def common_update(table, id_, record):
+    print(record)
     for i in range(len(table)):
         if table[i][0] == id_:
             table[i] = record
+            table[i].insert(0, id_)
     return table
 
 def return_the_last_item_by_alphabetical_order_of_the_title(list):
