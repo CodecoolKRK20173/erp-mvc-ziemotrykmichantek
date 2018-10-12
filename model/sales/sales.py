@@ -257,7 +257,7 @@ def get_all_sales_ids_for_customer_ids_from_table(table):
             customer_and_sales_ids[customer_id].append(sales_id)
     return customer_and_sales_ids
 
-def get_num_of_sales_per_customer_ids_from_table(table):
+def get_num_of_sales_per_customer_ids_from_table(table, customer_id):
     """
      Returns a dictionary of (customer_id, num_of_sales) where:
         customer_id:
